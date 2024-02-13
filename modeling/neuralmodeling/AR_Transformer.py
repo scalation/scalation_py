@@ -75,10 +75,6 @@ class Model(nn.Module):
     def forward(self, x_enc, x_mark_enc, x_dec, x_mark_dec, train=False): 
         batch_size = x_enc.shape[0]
         x_enc_temp = x_enc
-        #seq_last = x_enc[:, -1:, :].detach()
-        #x_enc = x_enc - seq_last
-        #x_enc = x_enc[:, 1:, :] - x_enc[:, :-1, :]
-        #x_enc = torch.cat([x_enc_temp[:, :1, :], x_enc], dim=1)
         if self.revin:
             x_enc = self.revin_layer(x_enc, 'norm')
         x_seq = self.enc_value_embedding(x_enc, x_mark_enc)
@@ -101,10 +97,6 @@ class Model(nn.Module):
                 decoder_input = torch.cat((true_input, dec_out[:, -self.patch_len_dec:, :]), 1)
             outputs.append(dec_out[:, -self.patch_len_dec:, :])
         outputs = torch.cat(outputs, dim=1)
-        #cumulative_sum = torch.cumsum(outputs, dim=1)
-        #final_prediction = torch.zeros_like(outputs)
-        #final_prediction[:, 0, :] = x_enc_temp[:, -5:, :].mean(dim=1)
-        #final_prediction[:, 1:, :] = x_enc_temp[:, -5:, :].mean(dim=1).unsqueeze(1) + cumulative_sum[:, :-1, :]
         if self.revin:
             outputs = self.revin_layer(outputs, 'denorm')
         if self.output_attention:
