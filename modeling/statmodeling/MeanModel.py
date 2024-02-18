@@ -1,10 +1,10 @@
 import numpy as np
 from typing import List, Union
-from data.data_loading import load_data, plot_train_test
-from data.data_transforms import data_transform_std
-from data.data_splitting import train_test_split
-from utils.metrics import mse, mae, smape
-from utils.getmetrics import getmetrics
+from util.data_loading import load_data, plot_train_test
+from util.data_transforms import data_transform_std
+from util.data_splitting import train_test_split
+from util.metrics import mse, mae, smape
+from util.getmetrics import getmetrics
 
 def MeanModel(file_name: str, training_ratio: float, horizon: int, main_output: str, normalization: bool) -> (int, float, float, float):
     """
