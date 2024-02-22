@@ -1,5 +1,8 @@
 import numpy as np
-from typing import List, Union
+from typing import Any, Union
+from numpy import ndarray, dtype, floating, float_
+from numpy._typing import _64Bit
+
 from util.data_loading import load_data, plot_train_test
 from util.data_transforms import data_transform_std
 from util.data_splitting import train_test_split
@@ -24,8 +27,8 @@ def SimpleMovingAverage(file_name: str, training_ratio: float, horizon: int, mai
 
     Returned Values
     ----------
-    actual: np.array
-    forecasts: np.array
+    actual: ndarray[Any, dtype[Union[floating[_64Bit], float_]]]
+    forecasts: ndarray[Any, dtype[Union[floating[_64Bit], float_]]]
     """
     horizon = horizon - 1
     data = load_data(file_name, main_output=main_output)
@@ -36,8 +39,8 @@ def SimpleMovingAverage(file_name: str, training_ratio: float, horizon: int, mai
     train_data, val_data, test_data = train_test_split(data, train_ratio=training_ratio)  # No validation data for the SMA model.
     train_data_MO = train_data[[main_output]]  # Train set for main output column.
     test_data_MO = test_data[[main_output]]  # Test set for main output column.
-    actual = np.zeros(shape=(len(test_data_MO) - horizon, horizon + 1))  # Make an initital array for storing the actual values.
-    forecasts = np.zeros(shape=(len(test_data_MO) - horizon, horizon + 1))   # Make an initital array for storing the forecasts values.
+    actual: ndarray[Any, dtype[Union[floating[_64Bit], float_]]] = np.zeros(shape=(len(test_data_MO) - horizon, horizon + 1))  # Make an initital array for storing the actual values.
+    forecasts: ndarray[Any, dtype[Union[floating[_64Bit], float_]]] = np.zeros(shape=(len(test_data_MO) - horizon, horizon + 1))   # Make an initital array for storing the forecasts values.
     for i in range(len(test_data_MO) - horizon):
         for j in range(horizon + 1):
             actual[i, j] = float(data.iloc[train_size + i + j, :]['new_deaths'])  # Record the observed data for the the future horizons.

@@ -1,6 +1,5 @@
-from typing import Any, Union
-
 import numpy as np
+from typing import Any, Union
 from numpy import ndarray, dtype, floating, float_
 from numpy._typing import _64Bit
 
@@ -27,8 +26,8 @@ def RandomWalk(file_name: str, training_ratio: float, horizon: int, main_output:
 
     Returned Values
     ----------
-    actual: np.array
-    forecasts: np.array
+    actual: ndarray[Any, dtype[Union[floating[_64Bit], float_]]]
+    forecasts: ndarray[Any, dtype[Union[floating[_64Bit], float_]]]
     """
     horizon = horizon - 1
     data = load_data(file_name, main_output=main_output)
