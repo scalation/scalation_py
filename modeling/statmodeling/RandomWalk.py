@@ -46,6 +46,7 @@ int, float, float, float):
     for i in range(len(test_data_MO) - horizon):
         for j in range(horizon + 1):
             print(j)
+            print(j)
             actual[i, j] = float(data.iloc[train_size + i + j, :][main_output])
             forecasts[i, j] = float(data.iloc[train_size + i - 1,:][main_output])  # For Random Walk, start with the last value from the training set.
     plot_train_test(data, main_output, train_size, train_data_MO, test_data_MO, forecasts, horizon)
