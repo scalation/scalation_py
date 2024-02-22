@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 from typing import Any, Union
 from numpy import ndarray, dtype, floating, float_
 from numpy._typing import _64Bit
@@ -36,8 +37,8 @@ def MeanModel(file_name: str, training_ratio: float, horizon: int, main_output: 
         scaled_mean_std, data = data_transform_std(data, train_size)
 
     train_data, val_data, test_data = train_test_split(data, train_ratio=training_ratio)  # No validation data for the Mean Model.
-    train_data_MO = train_data[[main_output]]  # Train set for main output column.
-    train_data_MO_mean = train_data_MO.mean()
+    train_data_MO: pd.DataFrame = train_data[[main_output]]  # Train set for main output column.
+    train_data_MO: pd.DataFrame_mean = train_data_MO.mean()
     test_data_MO = test_data[[main_output]]  # Test set for main output column.
     actual: ndarray[Any, dtype[Union[floating[_64Bit], float_]]] = np.zeros(shape=(len(test_data_MO) - horizon, horizon + 1))  # Make an initital array for storing the actual values.
     forecasts: ndarray[Any, dtype[Union[floating[_64Bit], float_]]] = np.zeros(shape=(len(test_data_MO) - horizon, horizon + 1))   # Make an initital array for storing the forecasts values.
