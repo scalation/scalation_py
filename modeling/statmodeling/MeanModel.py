@@ -6,10 +6,12 @@ from util.data_splitting import train_test_split
 from util.metrics import mse, mae, smape
 from util.getmetrics import getmetrics
 
-def MeanModel(file_name: str, training_ratio: float, horizon: int, main_output: str, normalization: bool) -> (int, float, float, float):
+
+def MeanModel(file_name: str, training_ratio: float, horizon: int, main_output: str, normalization: bool) -> (
+int, float, float, float):
     """
     A function used for producing forecasts by taking the mean of the training.
-    
+
     Arguments
     ----------
     file_name: str
@@ -22,7 +24,7 @@ def MeanModel(file_name: str, training_ratio: float, horizon: int, main_output: 
         the main output column/feature, e.g. '% WEIGHTED ILI'
     normalization: bool
         specifies whether the data is normalized or original
-        
+
     Returned Values
     ----------
     mse: float
@@ -31,24 +33,22 @@ def MeanModel(file_name: str, training_ratio: float, horizon: int, main_output: 
 
     """
     horizon = horizon - 1
-    data = load_data(file_name, main_output = main_output)
-    train_size = int(training_ratio*len(data))
+    data = load_data(file_name, main_output=main_output)
+    train_size = int(training_ratio * len(data))
     if normalization:
         scaled_mean_std, data = data_transform_std(data, train_size)
 
-    train_data, val_data, test_data = train_test_split(data, train_ratio = training_ratio)    # No validation data for Random Walk.   
-    train_data_MO = train_data[[main_output]]                   # Train set for main output column.
+    train_data, val_data, test_data = train_test_split(data,
+                                                       train_ratio=training_ratio)  # No validation data for Random Walk.
+    train_data_MO = train_data[[main_output]]  # Train set for main output column.
     train_data_MO_mean = train_data_MO.mean()
-    test_data_MO = test_data[[main_output]]                     # Test set for main output column.
-    actual = data[[main_output]]                                # Actual complete dataset for main output.
-    forecasts = []
+    test_data_MO = test_data[[main_output]]  # Test set for main output column.
+    data_MO = data[[main_output]]
+    actual = np.zeros(shape=(len(test_data_MO) - horizon, horizon + 1))  # Actual complete dataset for main output.
+    forecasts = np.zeros(shape=(len(test_data_MO) - horizon, horizon + 1))
     for i in range(len(test_data_MO) - horizon):
-        forecasts.append(train_data_MO_mean)     # For Random Walk, start with the last value from the training set.
-
-    actual = actual[train_size + horizon:]                      # Aligning actual with forecasts so both have the same length.
-    actual = np.array(actual)                                   # Convert actual a numpy array
-
+        for j in range(horizon + 1):
+            actual[i, j] = data_MO.iloc[train_size + i + j, :]
+            forecasts[i, j] = train_data_MO_mean  # For Random Walk, start with the last value from the training set.
     plot_train_test(data, main_output, train_size, train_data_MO, test_data_MO, forecasts, horizon)
-    mse, mae, smape = getmetrics(actual, forecasts)
-    
-    return len(actual), mse, mae, smape
+    return actual, forecasts

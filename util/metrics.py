@@ -10,7 +10,7 @@ Functions
 ----------
 smape: 
     def smape(y: np.ndarray, y_pred: np.ndarray) -> float:
-    
+
 mae:
     def mae(y: np.ndarray, y_pred: np.ndarray) -> float:
 
@@ -19,7 +19,7 @@ sst:
 
 sse:
     def sse(y: np.ndarray, y_pred: np.ndarray) -> float:
-    
+
 r2:
     def r2(y: np.ndarray, y_pred: np.ndarray) -> float:
 
@@ -33,8 +33,9 @@ rae:
     def rae(y: np.ndarray, y_pred: np.ndarray) -> float:
 """
 
+
 def smape(y: np.ndarray, y_pred: np.ndarray) -> float:
-    """ 
+    """
     A function to calculate the symmetric mean absolute percentage error (sMAPE).
 
     Arguments
@@ -43,16 +44,17 @@ def smape(y: np.ndarray, y_pred: np.ndarray) -> float:
         the response data
     y_pred: np.ndarray
         the predicted/forecasted outputs
-        
+
     Returned Values
     ----------
     sMAPE : float
 
-    """   
-    return 200 * np.sum(np.abs(y-y_pred) / (np.abs(y) + np.abs(y_pred))) / len(y)
+    """
+    return 200 * np.sum(np.abs(y - y_pred) / (np.abs(y) + np.abs(y_pred))) / len(y)
+
 
 def mae(y: np.ndarray, y_pred: np.ndarray) -> float:
-    """ 
+    """
     A function to calculate the mean absolute error (MAE).
 
     Arguments
@@ -61,31 +63,33 @@ def mae(y: np.ndarray, y_pred: np.ndarray) -> float:
         the response data
     y_pred: np.ndarray
         the predicted/forecasted outputs
-        
+
     Returned Values
     ----------
     MAE : float
 
-    """   
-    return np.sum(np.abs(y-y_pred))/len(y)
+    """
+    return np.sum(np.abs(y - y_pred)) / len(y)
+
 
 def sst(y: np.ndarray) -> float:
-    """ 
+    """
     A function to calculate the sum of squares total (SST).
 
     Arguments
     ----------
     y: np.ndarray
         the response data
-        
+
     Returned Values
     ----------
     SST : float
-    """ 
-    return np.sum((y-np.mean(y))**2)
+    """
+    return np.sum((y - np.mean(y)) ** 2)
+
 
 def sse(y: np.ndarray, y_pred: np.ndarray) -> float:
-    """ 
+    """
     A function to calculate the sum of squared errors (SSE).
 
     Arguments
@@ -94,16 +98,17 @@ def sse(y: np.ndarray, y_pred: np.ndarray) -> float:
         the response data
     y_pred: np.ndarray
         the predicted/forecasted outputs
-        
+
     Returned Values
     ----------
     SSE : float
 
-    """   
-    return np.sum((y-y_pred)**2)
+    """
+    return np.sum((y - y_pred) ** 2)
+
 
 def r2(y: np.ndarray, y_pred: np.ndarray) -> float:
-    """ 
+    """
     A function to calculate R squared (r2).
 
     Arguments
@@ -112,16 +117,17 @@ def r2(y: np.ndarray, y_pred: np.ndarray) -> float:
         the response data
     y_pred: np.ndarray
         the predicted/forecasted outputs
-        
+
     Returned Values
     ----------
     r2 : float
 
-    """   
-    return 1-sse(y, y_pred)/sst(y)
+    """
+    return 1 - sse(y, y_pred) / sst(y)
+
 
 def mse(y: np.ndarray, y_pred: np.ndarray) -> float:
-    """ 
+    """
     A function to calculate mean squared error (MSE).
 
     Arguments
@@ -130,16 +136,17 @@ def mse(y: np.ndarray, y_pred: np.ndarray) -> float:
         the response data
     y_pred: np.ndarray
         the predicted/forecasted outputs
-        
+
     Returned Values
     ----------
     MSE : float
 
-    """   
-    return sse(y, y_pred)/len(y)
+    """
+    return sse(y, y_pred) / len(y)
+
 
 def rmse(y: np.ndarray, y_pred: np.ndarray) -> float:
-    """ 
+    """
     A function to calculate root mean squared error (RMSE).
 
     Arguments
@@ -148,16 +155,17 @@ def rmse(y: np.ndarray, y_pred: np.ndarray) -> float:
         the response data
     y_pred: np.ndarray
         the predicted/forecasted outputs
-        
+
     Returned Values
     ----------
     RMSE : float
 
-    """   
+    """
     return np.sqrt(mse((y, y_pred)))
 
+
 def rae(y: np.ndarray, y_pred: np.ndarray) -> float:
-    """ 
+    """
     A function to calculate relative absolute error (RAE).
 
     Arguments
@@ -166,15 +174,36 @@ def rae(y: np.ndarray, y_pred: np.ndarray) -> float:
         the response data
     y_pred: np.ndarray
         the predicted/forecasted outputs
-        
+
     Returned Values
     ----------
     RAE : float
 
-    """  
+    """
     y_mean = np.mean(y)
     squared_error_num = np.sum(np.abs(y - y_pred))
     squared_error_den = np.sum(np.abs(y - y_mean))
     rae_loss = squared_error_num / squared_error_den
-    
+
     return rae_loss
+
+
+def getmetrics(actual: np.array, forecasts: np.array) -> (float, float, float):
+    """
+    A function used for returning the MSE, MAE, sMAPE metrics.
+
+    Arguments
+    ----------
+    actual: np.array
+        the observed test set values aligned with the forecasts
+    forecasts: np.array | List[floats]
+        the output from a forecasting model, i.e. RandomWalk
+
+    Returned Values
+    ----------
+    mse: float
+    mae: float
+    smape: float
+
+    """
+    return mse(actual, forecasts), mae(actual, forecasts), smape(actual, forecasts)
