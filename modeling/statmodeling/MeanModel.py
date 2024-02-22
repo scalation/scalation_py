@@ -1,11 +1,7 @@
 import numpy as np
-from typing import List, Union
 from util.data_loading import load_data, plot_train_test
 from util.data_transforms import data_transform_std
 from util.data_splitting import train_test_split
-from util.metrics import mse, mae, smape
-from util.getmetrics import getmetrics
-
 
 def MeanModel(file_name: str, training_ratio: float, horizon: int, main_output: str, normalization: bool) -> (
 int, float, float, float):
@@ -43,12 +39,11 @@ int, float, float, float):
     train_data_MO = train_data[[main_output]]  # Train set for main output column.
     train_data_MO_mean = train_data_MO.mean()
     test_data_MO = test_data[[main_output]]  # Test set for main output column.
-    data_MO = data[[main_output]]
     actual = np.zeros(shape=(len(test_data_MO) - horizon, horizon + 1))  # Actual complete dataset for main output.
     forecasts = np.zeros(shape=(len(test_data_MO) - horizon, horizon + 1))
     for i in range(len(test_data_MO) - horizon):
         for j in range(horizon + 1):
-            actual[i, j] = data_MO.iloc[train_size + i + j, :]
-            forecasts[i, j] = train_data_MO_mean  # For Random Walk, start with the last value from the training set.
+            actual[i, j] = float(data.iloc[train_size + i + j, :][main_output])
+            forecasts[i, j] = float(train_data_MO_mean.iloc[0])
     plot_train_test(data, main_output, train_size, train_data_MO, test_data_MO, forecasts, horizon)
     return actual, forecasts

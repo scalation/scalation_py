@@ -1,10 +1,7 @@
 import numpy as np
-from typing import List, Union
 from util.data_loading import load_data, plot_train_test
 from util.data_transforms import data_transform_std
 from util.data_splitting import train_test_split
-from util.metrics import mse, mae, smape
-
 
 def RandomWalk(file_name: str, training_ratio: float, horizon: int, main_output: str, normalization: bool) -> (
 int, float, float, float):
@@ -45,8 +42,6 @@ int, float, float, float):
     forecasts = np.zeros(shape=(len(test_data_MO) - horizon, horizon + 1))
     for i in range(len(test_data_MO) - horizon):
         for j in range(horizon + 1):
-            print(j)
-            print(j)
             actual[i, j] = float(data.iloc[train_size + i + j, :][main_output])
             forecasts[i, j] = float(data.iloc[train_size + i - 1,:][main_output])  # For Random Walk, start with the last value from the training set.
     plot_train_test(data, main_output, train_size, train_data_MO, test_data_MO, forecasts, horizon)
