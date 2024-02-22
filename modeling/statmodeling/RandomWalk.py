@@ -5,11 +5,11 @@ from util.data_transforms import data_transform_std
 from util.data_splitting import train_test_split
 from util.metrics import mse, mae, smape
 from util.getmetrics import getmetrics
-
 def RandomWalk(file_name: str, training_ratio: float, horizon: int, main_output: str, normalization: bool) -> (int, float, float, float):
     """
     A function used for producing forecasts based on the Random Walk model that simply projects a current value into the future (yhat[t] = y[t-h]).
-    
+    # test git.
+    # test git.
     Arguments
     ----------
     file_name: str
