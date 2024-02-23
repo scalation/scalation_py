@@ -64,7 +64,9 @@ def plot_train_test(df_raw_scaled: pd.DataFrame, main_output: str, train_size: f
     if forecasts is not None:
         for i in range(horizon + 1):
             idx = np.arange(train_size + i, train_size + i + forecasts.shape[0], 1)
-            plt.plot(idx, forecasts[:, i], color=(random.uniform(0, 1), random.uniform(0, 1), random.uniform(0, 1)),
+            plt.plot(idx, forecasts[:, i], color=(random.randint(0, 255)/255.0,
+                                                  random.randint(0, 255)/255.0,
+                                                  random.randint(0, 255)/255.0),
                      label=str('Forecasts ' + 'h ' + str(i + 1)))
     plt.ticklabel_format(style='plain')
     plt.title('Random Walk - ' + main_output)
