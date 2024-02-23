@@ -58,7 +58,9 @@ def plot_data(data: pd.DataFrame):
 
 
 def plot_train_test(df_raw_scaled: pd.DataFrame, main_output: str, train_size: float, train: pd.DataFrame,
-                    test: pd.DataFrame, forecasts: pd.DataFrame = None, horizon=24) -> None:
+                    test: pd.DataFrame, forecasts: pd.DataFrame = None, horizon=24,
+                    model = 'Random Walk') -> None:
+    plt.subplots(figsize=(7, 4))
     plt.plot(train, color='red', label='Observed Train')
     plt.plot(test, color='blue', label='Observed Test')
     if forecasts is not None:
@@ -69,6 +71,6 @@ def plot_train_test(df_raw_scaled: pd.DataFrame, main_output: str, train_size: f
                                                   random.randint(0, 255)/255.0),
                      label=str('Forecasts ' + 'h ' + str(i + 1)))
     plt.ticklabel_format(style='plain')
-    plt.title('Random Walk - ' + main_output)
+    plt.title(model + ' - ' + main_output)
     plt.legend()
     plt.show()

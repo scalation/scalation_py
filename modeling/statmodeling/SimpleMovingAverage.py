@@ -8,7 +8,7 @@ from util.data_transforms import data_transform_std
 from util.data_splitting import train_test_split
 
 def SimpleMovingAverage(file_name: str, training_ratio: float, horizon: int, main_output: str, normalization: bool,
-                        window: int) -> (np.array, np.array):
+                        window: int, model: str) -> (np.array, np.array):
     """
     A function used for producing forecasts by taking the mean of previous values according to a given window (w = 1 is the Random Walk model).
 
@@ -24,6 +24,8 @@ def SimpleMovingAverage(file_name: str, training_ratio: float, horizon: int, mai
         the main output column/feature, e.g. '% WEIGHTED ILI'
     normalization: bool
         specifies whether the data is normalized or original
+    model: str
+        model name
 
     Returned Values
     ----------
@@ -45,5 +47,5 @@ def SimpleMovingAverage(file_name: str, training_ratio: float, horizon: int, mai
         for j in range(horizon + 1):
             actual[i, j] = float(data.iloc[train_size + i + j, :]['new_deaths'])  # Record the observed data for the the future horizons.
             forecasts[i, j] = float(data.iloc[train_size + i - window:train_size + i, :]['new_deaths'].mean())  # Take the mean of the last number of time steps based on a given window and record record it for each forecasting horizon.
-    plot_train_test(data, main_output, train_size, train_data_MO, test_data_MO, forecasts, horizon)
+    plot_train_test(data, main_output, train_size, train_data_MO, test_data_MO, forecasts, horizon, model)
     return actual, forecasts

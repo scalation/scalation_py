@@ -8,7 +8,7 @@ from util.data_loading import load_data, plot_train_test
 from util.data_transforms import data_transform_std
 from util.data_splitting import train_test_split
 
-def MeanModel(file_name: str, training_ratio: float, horizon: int, main_output: str, normalization: bool) -> (np.array, np.array):
+def MeanModel(file_name: str, training_ratio: float, horizon: int, main_output: str, normalization: bool, model: str) -> (np.array, np.array):
     """
     A function used for producing forecasts by taking the mean of the training data and project it into the future for all the future horizons.
 
@@ -24,6 +24,8 @@ def MeanModel(file_name: str, training_ratio: float, horizon: int, main_output: 
         the main output column/feature, e.g. '% WEIGHTED ILI'
     normalization: bool
         specifies whether the data is normalized or original
+    model: str
+        model name
 
     Returned Values
     ----------
@@ -46,5 +48,5 @@ def MeanModel(file_name: str, training_ratio: float, horizon: int, main_output: 
         for j in range(horizon + 1):
             actual[i, j] = float(data.iloc[train_size + i + j, :][main_output]) # Record the observed data for the the future horizons.
             forecasts[i, j] = float(train_data_MO_mean.iloc[0])  # Record the mean of the entire training data for each forecasting horizon.
-    plot_train_test(data, main_output, train_size, train_data_MO, test_data_MO, forecasts, horizon)
+    plot_train_test(data, main_output, train_size, train_data_MO, test_data_MO, forecasts, horizon, model)
     return actual, forecasts
