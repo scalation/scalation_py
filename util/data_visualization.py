@@ -69,12 +69,6 @@ def plot_time_series(file_name: str, main_output: str):
 def plot_acf(file_name: str, main_output: str, lags: int, diff_order: int):
     data = load_data(file_name, main_output=main_output)
     data = data[[main_output]]
-    #train_size = int(training_ratio * len(data))
-    #if normalization:
-    #    scaled_mean_std, data = data_transform_std(data, train_size)
-    #train_data, val_data, test_data = train_test_split(data, train_ratio=training_ratio)  # No validation data for the Random Walk model.
-    #train_data_MO: pd.DataFrame = train_data[[main_output]]  # Train set for main output column.
-    #test_data_MO: pd.DataFrame = test_data[[main_output]]  # Test set for main output column.
     if diff_order is not None:
         for _ in range(diff_order):
             data = data.diff().dropna()
@@ -85,12 +79,6 @@ def plot_acf(file_name: str, main_output: str, lags: int, diff_order: int):
 def plot_pacf(file_name: str, main_output: str, lags: int, diff_order: int):
     data = load_data(file_name, main_output=main_output)
     data = data[[main_output]]
-    #train_size = int(training_ratio * len(data))
-    #if normalization:
-    #    scaled_mean_std, data = data_transform_std(data, train_size)
-    #train_data, val_data, test_data = train_test_split(data, train_ratio=training_ratio)  # No validation data for the Random Walk model.
-    #train_data_MO: pd.DataFrame = train_data[[main_output]]  # Train set for main output column.
-    #test_data_MO: pd.DataFrame = test_data[[main_output]]  # Test set for main output column.
     if diff_order is not None:
         for _ in range(diff_order):
             data = data.diff().dropna()
