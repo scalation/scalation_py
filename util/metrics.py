@@ -168,7 +168,7 @@ def rmse(y: np.ndarray, y_pred: np.ndarray) -> float:
     RMSE : float
 
     """
-    return np.sqrt(mse((y, y_pred)))
+    return np.sqrt(mse(y, y_pred))
 
 
 def rae(y: np.ndarray, y_pred: np.ndarray) -> float:
@@ -194,23 +194,33 @@ def rae(y: np.ndarray, y_pred: np.ndarray) -> float:
 
     return rae_loss
 
-
-def getmetrics(actual: np.array, forecasts: np.array) -> (float, float, float):
-    """
-    A function used for returning the MSE, MAE, sMAPE metrics.
-
-    Arguments
-    ----------
-    actual: np.array
-        the observed test set values aligned with the forecasts
-    forecasts: np.array | List[floats]
-        the output from a forecasting model, i.e. RandomWalk
-
-    Returned Values
-    ----------
-    mse: float
-    mae: float
-    smape: float
-
-    """
-    return mse(actual, forecasts), mae(actual, forecasts), smape(actual, forecasts)
+def get_metrics(actual, forecasts, args):
+    print("Out of Sample Test set metrics {}".format(args.MO))
+    total_mse, total_mae, total_smape, total_rmse = 0, 0, 0, 0
+    if args.last_only:
+        y = np.expand_dims(actual[:, i], axis=-1)
+        y_pred = np.expand_dims(forecasts[:, i], axis=-1)
+        mse_, mae_, smape_ = 0, 0, 0
+        mse_ = mse(y, y_pred)
+        mae_ = mae(y, y_pred)
+        smape_ = smape(y, y_pred)
+        print('h:{}, N:{}, MSE: {}, MAE: {}, sMAPE: {}'.format(args.vis_h, len(actual), mse_, mae_, smape_))
+    else:
+        for i in range(args.horizon):
+            y = np.expand_dims(actual[:, i], axis=-1)
+            y_pred = np.expand_dims(forecasts[:, i], axis=-1)
+            mse_, mae_, smape_ = 0, 0, 0
+            mse_ = mse(y, y_pred)
+            mae_ = mae(y, y_pred)
+            smape_ = smape(y, y_pred)
+            rmse_ = rmse(y, y_pred)
+            total_mse += mse_
+            total_mae += mae_
+            total_smape += smape_
+            total_rmse += rmse_
+            print('h:{}, N:{}, MSE:{}, MAE:{}, sMAPE:{}, RMSE:{}'.format(i, len(actual), mse_, mae_, smape_, rmse_))
+        avg_mse = total_mse / args.horizon
+        avg_mae = total_mae / args.horizon
+        avg_smape = total_smape / args.horizon
+        avg_rmse = total_rmse / args.horizon
+        print('Average MSE: {}, Average MAE: {}, Average sMAPE: {}, Average RMSE: {}'.format(avg_mse, avg_mae, avg_smape, avg_rmse))

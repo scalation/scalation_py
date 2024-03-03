@@ -5,17 +5,21 @@ __version__ = "1.0"
 __license__ = "MIT style license file"
 """
 
+import time
 import numpy as np
 from typing import Any, Union
 from numpy import ndarray, dtype, floating, float_
 from numpy._typing import _64Bit
+from tqdm import tqdm
 
-from util.data_loading import load_data, plot_train_test
+from util.data_loading import load_data
+from util.data_visualization import plot_train_test
 from util.data_transforms import data_transform_std
+from util.data_transforms import inverse_transformation
 from util.data_splitting import train_test_split
 
-def SimpleMovingAverage(file_name: str, training_ratio: float, horizon: int, main_output: str, normalization: bool,
-                        window: int, model: str) -> (np.array, np.array):
+def SimpleMovingAverage(file_name: str, training_ratio: float, horizon: int, main_output: str, normalization: bool, model: str,
+        vis_h: int, LTSF: bool, inverse_transform: bool, window: int) -> (np.array, np.array):
     """
     A function used for producing forecasts by taking the mean of previous values according to a given window (w = 1 is the Random Walk model).
 
@@ -50,9 +54,15 @@ def SimpleMovingAverage(file_name: str, training_ratio: float, horizon: int, mai
     test_data_MO = test_data[[main_output]]  # Test set for main output column.
     actual: ndarray[Any, dtype[Union[floating[_64Bit], float_]]] = np.zeros(shape=(len(test_data_MO) - horizon, horizon + 1))  # Make an initital array for storing the actual values.
     forecasts: ndarray[Any, dtype[Union[floating[_64Bit], float_]]] = np.zeros(shape=(len(test_data_MO) - horizon, horizon + 1))   # Make an initital array for storing the forecasts values.
-    for i in range(len(test_data_MO) - horizon):
+    start_time = time.time()
+    for i in tqdm(range(len(test_data_MO) - horizon)):
         for j in range(horizon + 1):
             actual[i, j] = float(data.iloc[train_size + i + j, :]['new_deaths'])  # Record the observed data for the the future horizons.
             forecasts[i, j] = float(data.iloc[train_size + i - window:train_size + i, :]['new_deaths'].mean())  # Take the mean of the last number of time steps based on a given window and record record it for each forecasting horizon.
-    plot_train_test(data, main_output, train_size, train_data_MO, test_data_MO, forecasts, horizon, model)
+    end_time = time.time()
+    total_time = end_time - start_time
+    print(f"Total Time:{total_time} seconds.")
+    if inverse_transform:
+        train_data_MO, test_data_MO, actual, forecasts = inverse_transformation( train_data_MO, test_data_MO, actual, forecasts, scaled_mean_std['scaled'+main_output], 'standard_scaler')
+    plot_train_test(data, main_output, train_size, train_data_MO, test_data_MO, forecasts, horizon, model, vis_h)
     return actual, forecasts

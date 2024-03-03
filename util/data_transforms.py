@@ -79,3 +79,20 @@ def data_transform_minmax(df: pd.DataFrame, train_size: float, min_: float = 0, 
         scalers['scaler_' + df.columns[i]] = scaler
         df.iloc[:, i] = pd.DataFrame(rescaled)
     return scalers, df 
+
+def inverse_transformation(train_data_MO, test_data_MO, actual, forecasts, stats, normalization_type):
+    print('here')
+    if normalization_type == 'min_max':
+        min = stats.data_min_
+        min = stats.data_max_
+        actual = actual * (max - min) + min
+        forecasts = forecasts * (max - min) + min
+    elif normalization_type == 'standard_scaler':
+        print(stats)
+        mean = stats.mean_
+        std = stats.scale_
+        actual = actual * std + mean
+        forecasts = forecasts * std + mean
+        train_data_MO = train_data_MO * std + mean
+        test_data_MO = test_data_MO * std + mean
+    return train_data_MO, test_data_MO, actual, forecasts
