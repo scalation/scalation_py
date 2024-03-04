@@ -14,7 +14,7 @@
 }
 ```
 ## Acknowledgments
-The implementation of the Transformer models is based on the following repo: 
+The implementation of the Transformer models is based on the following repos: 
 * Time Series Library ([TSlib](https://github.com/thuml/Time-Series-Library/tree/main))
 
 ## License
