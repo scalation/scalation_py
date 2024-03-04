@@ -1,8 +1,8 @@
 ## Scalation Python
 
 ## Papers
-* A Survey of Deep-Learning and Foundation Models for Time Series Forecasting: Supplement\
-[Paper](https://arxiv.org/pdf/2401.13912.pdf)
+* A Survey of Deep-Learning and Foundation Models for Time Series Forecasting\
+[Paper](https://arxiv.org/pdf/2401.13912.pdf) | [Supplement](https://arxiv.org/pdf/2401.13912.pdf)
 
 ## Citations
 ```
