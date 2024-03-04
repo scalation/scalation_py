@@ -4,7 +4,7 @@
 * A Survey of Deep-Learning and Foundation Models for Time Series Forecasting: Supplement\
 [Paper](https://arxiv.org/pdf/2401.13912.pdf)
 
-## Citation
+## Citations
 ```
 @article{miller2024survey,
   title={A survey of deep learning and foundation models for time series forecasting},
@@ -13,8 +13,7 @@
   year={2024}
 }
 ```
-
-## Acknowledgment
+## Acknowledgments
 The implementation of the Transformer models is based on the following repo: 
 * Time Series Library ([TSlib](https://github.com/thuml/Time-Series-Library/tree/main))
 
