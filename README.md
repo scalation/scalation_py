@@ -1,3 +1,22 @@
-# Scalation Python
-A Survey of Deep-Learning and Foundation Models for Time Series Forecasting: Supplement\
+## Scalation Python
+
+## Papers
+* A Survey of Deep-Learning and Foundation Models for Time Series Forecasting: Supplement\
 [Paper](https://arxiv.org/pdf/2401.13912.pdf)
+
+## Citation
+```
+@article{miller2024survey,
+  title={A survey of deep learning and foundation models for time series forecasting},
+  author={Miller, John A and Aldosari, Mohammed and Saeed, Farah and Barna, Nasid Habib and Rana, Subas and Arpinar, I Budak and Liu, Ninghao},
+  journal={arXiv preprint arXiv:2401.13912},
+  year={2024}
+}
+```
+
+## Acknowledgment
+The implementation of the Transformer models is based on the following repo: 
+* Time Series Library ([TSlib](https://github.com/thuml/Time-Series-Library/tree/main))
+
+## License
+The scalation_py repo is licensed under the MIT license. Please see the [license file](https://github.com/scalation/scalation_py/blob/main/License.txt). 
