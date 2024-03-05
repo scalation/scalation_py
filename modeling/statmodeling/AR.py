@@ -20,7 +20,7 @@ from statsmodels.tsa.ar_model import AutoReg
 def AR(file_name: str, training_ratio: float, horizon: int, main_output: str, normalization: bool, model: str, p: int
         , vis_h: Optional[int], startH: int, inverse_transform: bool, trend: str) -> (np.array, np.array):
     """
-    The AR model is the most straightforward forecasting model, which regresses the future values on a given number of past lags.
+    The AR model is the most straightforward forecasting model. It regresses the future values on a given number of past lags.
     The AR model is determined with a p order, which specifies the number of lags used in the model. With some conditions,
     the AR model with order p = 1 can be considered as the simple Random Walk model.
     The partial autocorrelation function (PACF) can be used to inform the selection of the AR order where one wants to select an order with high significant PACF scores.
