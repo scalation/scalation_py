@@ -22,9 +22,14 @@ def AR(file_name: str, training_ratio: float, horizon: int, main_output: str, no
     """
     The AR model is the most straightforward forecasting model. It regresses the future values on a given number of past lags.
     The AR model is determined with a p order, which specifies the number of lags used in the model. With some conditions,
-    the AR model with order p = 1 can be considered as the simple Random Walk model.
+    The AR model with order p = 1 can be considered a simple random walk model.
     The partial autocorrelation function (PACF) can be used to inform the selection of the AR order where one wants to select an order with high significant PACF scores.
-    Note: The forecasts of the AR model are genereted using the Iterative Forecasting approach.
+    The parameters of the AR model are estimated using Ordinary Least Squares (OLS).
+    Note: The forecasts of the AR model are generated using the Iterative Forecasting approach.
+    For more information, please see https://en.wikipedia.org/wiki/Autoregressive_model
+                                     https://cobweb.cs.uga.edu/~jam/scalation_guide/comp_data_science.pdf
+                                     https://www.statsmodels.org/dev/generated/statsmodels.tsa.ar_model.AutoReg.html
+
 
     Parameters
     ----------
