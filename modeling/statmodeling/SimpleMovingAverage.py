@@ -47,7 +47,7 @@ def SimpleMovingAverage(file_name: str, training_ratio: float, horizon: int, mai
     if normalization:
         scaled_mean_std, data = data_transform_std(data, train_size)
 
-    train_data, val_data, test_data = train_test_split(data, train_ratio=training_ratio)  # No validation data for the SMA model.
+    train_data, val_data, test_data = train_test_split(data, train_ratio = training_ratio)  # No validation data for the SMA model.
     train_data_MO = train_data[[main_output]]  # Train set for main output column.
     test_data_MO = test_data[[main_output]]  # Test set for main output column.
     actual: ndarray[float] = np.zeros(shape = (len(test_data_MO) - horizon, horizon + 1))  # Make an initital array for storing the actual values.
