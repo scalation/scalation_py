@@ -17,8 +17,8 @@ from util.data_transforms import data_transform_std, inverse_transformation
 from util.data_splitting import train_test_split
 from statsmodels.tsa.ar_model import AutoReg
 
-def AR(file_name: str, training_ratio: float, horizon: int, main_output: str, normalization: bool, model: str, p: int
-        , vis_h: Optional[int], startH: int, inverse_transform: bool, trend: str) -> (np.array, np.array):
+def AR(file_name: str, training_ratio: float, horizon: int, main_output: str, normalization: bool, model: str, p: int,
+       vis_h: Optional[int], startH: int, inverse_transform: bool, trend: str) -> (np.array, np.array):
     """
     The AR model is the most straightforward forecasting model. It regresses the future values on a given number of past lags.
     The AR model is determined with a p order, which specifies the number of lags used in the model. With some conditions,
