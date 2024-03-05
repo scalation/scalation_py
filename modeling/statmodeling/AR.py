@@ -24,7 +24,7 @@ def AR(file_name: str, training_ratio: float, horizon: int, main_output: str, no
     The AR model is determined with a p order, which specifies the number of lags used in the model. With some conditions,
     The AR model with order p = 1 can be considered a simple random walk model.
     The partial autocorrelation function (PACF) can be used to inform the selection of the AR order where one wants to select an order with high significant PACF scores.
-    The parameters of the AR model are estimated using Ordinary Least Squares (OLS).
+    The parameters of the AR model are estimated using Ordinary Least Squares (OLS) procedure.
     Note: The forecasts of the AR model are generated using the Iterative Forecasting approach.
     For more information, please see https://en.wikipedia.org/wiki/Autoregressive_model
                                      https://cobweb.cs.uga.edu/~jam/scalation_guide/comp_data_science.pdf
