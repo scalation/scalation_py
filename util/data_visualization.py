@@ -108,6 +108,7 @@ def plot_train_test(df_raw_scaled: pd.DataFrame, main_output: str, train_size: f
 
 def plot_acf(file_name: str, main_output: str, lags: int, diff_order: int):
     """
+    A function for plotting the autocorrelation function (ACF).
 
     Parameters
     ----------
@@ -131,6 +132,7 @@ def plot_acf(file_name: str, main_output: str, lags: int, diff_order: int):
 
 def plot_pacf(file_name: str, main_output: str, lags: int, diff_order: int):
     """
+    A function for plotting the partial autocorrelation function (PACF).
 
     Parameters
     ----------
@@ -142,7 +144,6 @@ def plot_pacf(file_name: str, main_output: str, lags: int, diff_order: int):
         lags in which we are interested in calculating and visualizing partial autocorrelation
     diff_order: int
         control the order of differencing (first order) before calculating and visualizing partial autocorrelation
-
     """
     data = load_data(file_name, main_output=main_output)
     data = data[[main_output]]
@@ -152,8 +153,10 @@ def plot_pacf(file_name: str, main_output: str, lags: int, diff_order: int):
     sm.graphics.tsa.plot_pacf(data.values.squeeze(), lags=lags)
     plt.show()
 
-def plot_seasonal_difference(file_name: str, main_output: str, lags: int, diff_order: int, diff_orders: int):
+def plot_seasonal_difference(file_name: str, main_output: str, lags: int, diff_order: int, diff_orders: int,
+                             function: str):
     """
+    A function for plotting the ACF or the PACF of data using simple first order or seasonal differencing.
 
     Parameters
     ----------
@@ -167,10 +170,6 @@ def plot_seasonal_difference(file_name: str, main_output: str, lags: int, diff_o
         control the order of differencing (first order) before calculating and visualizing autocorrelation
     diff_orders: int
         control the order of differencing (seasonal order) before calculating and visualizing autocorrelation
-
-    Returns
-    -------
-
     """
     data = load_data(file_name, main_output=main_output)
     data = data[[main_output]]
@@ -179,6 +178,8 @@ def plot_seasonal_difference(file_name: str, main_output: str, lags: int, diff_o
     data = pd.concat([data_or.head(1), data], axis=0)
     data = data.diff(diff_orders).dropna()
     data = pd.concat([data_or.head(diff_orders), data], axis=0)
-    sm.graphics.tsa.plot_acf(data.values.squeeze(), lags=lags)
+    if function == 'ACF':
+        sm.graphics.tsa.plot_acf(data.values.squeeze(), lags=lags)
+    elif function == 'PACF':
+        sm.graphics.tsa.plot_pacf(data.values.squeeze(), lags=lags)
     plt.show()
-    return
