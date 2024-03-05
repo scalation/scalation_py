@@ -30,7 +30,6 @@ def AR(file_name: str, training_ratio: float, horizon: int, main_output: str, no
                                      https://cobweb.cs.uga.edu/~jam/scalation_guide/comp_data_science.pdf
                                      https://www.statsmodels.org/dev/generated/statsmodels.tsa.ar_model.AutoReg.html
 
-
     Parameters
     ----------
     file_name: str
