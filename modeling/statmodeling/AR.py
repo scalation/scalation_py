@@ -43,7 +43,7 @@ def AR(file_name: str, training_ratio: float, horizon: int, main_output: str, no
     p: int
         the number of lags to use for the AR model. partial autocorrelation (PACF) is often used for informed selection
         of this parameter where one wants to select the lag with a high significant correlation.
-    vis_h: Optional[int] = None
+    vis_h: Optional[int]
         this parameter specifies whether to visualize all the forecasting horizons (vis_h = None) or a specific horizon (vis_h = 4).
     startH: int
         startH controls the horizon to which we are interested in forecasting and visualizing. it may be highly useful for long forecasting horizons.
