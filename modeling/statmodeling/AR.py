@@ -63,7 +63,6 @@ def AR(file_name: str, training_ratio: float, horizon: int, main_output: str, no
     actual: ndarray[float]
     forecasts: ndarray[float]
     """
-
     horizon = horizon - 1
     startH = startH -1
     data = load_data(file_name, main_output = main_output)
