@@ -19,7 +19,7 @@ from util.data_splitting import train_test_split
 def MeanModel(file_name: str, training_ratio: float, horizon: int, main_output: str, normalization: bool, model: str,
         vis_h: int, LTSF: bool, inverse_transform: bool, startH: int) -> (np.array, np.array):
     """
-    A function used for producing forecasts by taking the mean of the training data and project it into the future for all the future horizons.
+    A function used for producing forecasts by taking the mean of the training data and projecting it into the future for all the future horizons.
 
     Arguments
     ----------
