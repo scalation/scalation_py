@@ -55,8 +55,8 @@ def SimpleMovingAverage(file_name: str, training_ratio: float, horizon: int, mai
     start_time = time.time()
     for i in tqdm(range(len(test_data_MO) - horizon)):
         for j in range(startH, horizon + 1):
-            actual[i, j] = float(data.iloc[train_size + i + j, :]['new_deaths'])  # Record the observed data for the the future horizons.
-            forecasts[i, j] = float(data.iloc[train_size + i - window:train_size + i, :]['new_deaths'].mean())  # Take the mean of the last number of time steps based on a given window and record record it for each forecasting horizon.
+            actual[i, j] = float(data.iloc[train_size + i + j, :][main_output])  # Record the observed data for the the future horizons.
+            forecasts[i, j] = float(data.iloc[train_size + i - window:train_size + i, :][main_output].mean())  # Take the mean of the last number of time steps based on a given window and record record it for each forecasting horizon.
     end_time = time.time()
     total_time = end_time - start_time
     print(f"Total Time:{total_time} seconds.")
