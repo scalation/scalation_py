@@ -103,6 +103,7 @@ def plot_train_test(df_raw_scaled: pd.DataFrame, main_output: str, train_size: f
                          label=str('Forecasts ' + 'h ' + str(i + 1)))
     plt.ticklabel_format(style='plain')
     plt.title(model + ' - ' + main_output)
+    plt.xlabel("Time")
     plt.legend()
     plt.show()
 
