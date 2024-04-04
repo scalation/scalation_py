@@ -1,3 +1,10 @@
+"""
+__author__ = "Mohammed Aldosari"
+__date__ = 4/4/24
+__version__ = "1.0"
+__license__ = "MIT style license file"
+"""
+
 import numpy as np
 import scipy.stats 
 def prediction_interval(actual, forecasts, t, h, percentile):
