@@ -14,8 +14,9 @@
 }
 ```
 ## Acknowledgments
-The implementation of the Transformer models is based on the following repos: 
-* Time Series Library ([TSlib](https://github.com/thuml/Time-Series-Library/tree/main))
+The implementation of the statistical and neural models is based on the following projects:
+* [statsmodels](https://www.statsmodels.org/stable/index.html)
+* [Time Series Library](https://github.com/thuml/Time-Series-Library/tree/main)
 
 ## License
 The scalation_py repo is licensed under an MIT License. Please see the [license file](https://github.com/scalation/scalation_py/blob/main/License.txt). 
