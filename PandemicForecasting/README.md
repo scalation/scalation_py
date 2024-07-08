@@ -12,6 +12,8 @@ The repository is organized into three main directories corresponding to the dif
 Our project comprises various machine learning models, including both neural networks and transformer-based models, as well as statistical models. Each model has a separate codebase organized with a main script (main.py) for running experiments and a Jupyter Notebook for the Seasonal AutoRegressive Integrated Moving Average with eXogenous variables (SARIMAX) model.
 
 ### Neural Networks
+All the models below are built using the [torch.nn](https://pytorch.org/docs/stable/nn.html) module from PyTorch, which provides a comprehensive set of tools and functionalities to construct and train neural networks efficiently while DLinear and NLinear codes are taken from their repository [LTSF-Linear](https://github.com/cure-lab/LTSF-Linear).
+
 - Feed Forward Neural Network (FFNN)
 - [Gated Recurrent Unit](https://pytorch.org/docs/stable/generated/torch.nn.GRU.html#torch.nn.GRU) (GRU)
 - [Long Short Term Memory](https://pytorch.org/docs/stable/generated/torch.nn.LSTM.html#torch.nn.LSTM) (LSTM)
@@ -22,7 +24,6 @@ Our project comprises various machine learning models, including both neural net
 - [DLinear](https://arxiv.org/abs/2205.13504)
 - [NLinear](https://arxiv.org/abs/2205.13504)
   
-All the models above are built using the [torch.nn](https://pytorch.org/docs/stable/nn.html) module from PyTorch, which provides a comprehensive set of tools and functionalities to construct and train neural networks efficiently while DLinear and NLinear codes are taken from their repository [LTSF-Linear](https://github.com/cure-lab/LTSF-Linear).
 ### Transformers
 - [Transformer](https://arxiv.org/abs/1706.03762)
 - [Informer](https://arxiv.org/abs/2012.07436)
@@ -30,7 +31,7 @@ All the models above are built using the [torch.nn](https://pytorch.org/docs/sta
 - [FEDformer](https://arxiv.org/abs/2201.12740)
 - [PatchTST](https://arxiv.org/abs/2211.14730)
 
-Thanks to the [PatchTST](https://github.com/yuqinie98/PatchTST) repository for providing all the transformers in one place.
+Thanks to the [PatchTST](https://github.com/yuqinie98/PatchTST) repository for providing all the transformers code in one place.
 ### Statistical Models
 - RandomWalk
 - SARIMAX
