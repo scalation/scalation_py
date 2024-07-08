@@ -9,7 +9,7 @@ The repository is organized into three main directories corresponding to the dif
 - `CDC_Experiments/`: Contains the code and data for experiments conducted using CDC data.
 
 ## Getting Started
-Our project comprises various machine learning models, including both neural networks and transformer-based models, as well as a statistical models. Each model has a separate codebase organized with a main script (main.py) for running experiments and a Jupyter Notebook for the SARIMAX model.
+Our project comprises various machine learning models, including both neural networks and transformer-based models, as well as statistical models. Each model has a separate codebase organized with a main script (main.py) for running experiments and a Jupyter Notebook for the Seasonal AutoRegressive Integrated Moving Average with eXogenous variables (SARIMAX) model.
 
 ### Neural Networks
 - Feed Forward Neural Network (FFNN)
@@ -19,16 +19,20 @@ Our project comprises various machine learning models, including both neural net
 - LSTM Sequence-to-Sequence
 - GRU Sequence-to-Sequence with Attention
 - LSTM Sequence-to-Sequence with Attention
-- [DLinear](https://github.com/cure-lab/LTSF-Linear)
-- [NLinear](https://github.com/cure-lab/LTSF-Linear)
+- [DLinear](https://arxiv.org/abs/2205.13504)
+- [NLinear](https://arxiv.org/abs/2205.13504)
   
-All the models above are built using the "torch.nn" module from PyTorch, which provides a comprehensive set of tools and functionalities to construct and train neural networks efficiently while DLinear and NLinear codes are taken from their repositories.
+All the models above are built using the "torch.nn" module from PyTorch, which provides a comprehensive set of tools and functionalities to construct and train neural networks efficiently while DLinear and NLinear codes are taken from their repository [LTSF-Linear](https://github.com/cure-lab/LTSF-Linear).
 ### Transformers
-- Transformer
-- Informer
-- Autoformer
-- FEDformer
-- PatchTST
+- [Transformer](https://arxiv.org/abs/1706.03762)
+- [Informer](https://arxiv.org/abs/2012.07436)
+- [Autoformer](https://arxiv.org/abs/2106.13008)
+- [FEDformer](https://arxiv.org/abs/2201.12740)
+- [PatchTST](https://arxiv.org/abs/2211.14730)
+
+Thanks to the [PatchTST](https://github.com/yuqinie98/PatchTST) repository for providing all the transformers in one place.
 ### Statistical Models
 - RandomWalk
 - SARIMAX
+
+The SARIMAX model is built using the [Statsmodel](https://www.statsmodels.org/stable/index.html) library.
