@@ -20,8 +20,8 @@ Our project comprises various machine learning models, including both neural net
 - GRU Sequence-to-Sequence with Attention
 - LSTM Sequence-to-Sequence with Attention
 - DLinear
-- Nlinear
-### Transformer Based Models
+- NLinear
+### Transformer-Based Models
 - Transformer
 - Informer
 - Autoformer
