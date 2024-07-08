@@ -19,6 +19,8 @@ Our project comprises various machine learning models, including both neural net
 - LSTM Sequence-to-Sequence
 - GRU Sequence-to-Sequence with Attention
 - LSTM Sequence-to-Sequence with Attention
+- DLinear
+- Nlinear
 ### Transformer Based Models
 - Transformer
 - Informer
@@ -26,4 +28,5 @@ Our project comprises various machine learning models, including both neural net
 - FEDformer
 - PatchTST
 ### Statistical Model
+- RandomWalk
 - SARIMAX
