@@ -8,4 +8,4 @@ The repository is organized into three main directories corresponding to the dif
 - `RollingWindow/`: Contains the code and data for experiments using a rolling window approach.
 - `CDC_Experiments/`: Contains the code and data for experiments conducted using CDC data.
 
-
+## Getting Started
