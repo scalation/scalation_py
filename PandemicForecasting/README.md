@@ -11,7 +11,7 @@ The repository is organized into three main directories corresponding to the dif
 ## Getting Started
 Our project comprises various machine learning models, including both neural networks and transformer-based models, as well as a statistical models. Each model has a separate codebase organized with a main script (main.py) for running experiments and a Jupyter Notebook for the SARIMAX model.
 
-### Machine Learning Models
+### Neural Networks
 - Feed Forward Neural Network (FFNN)
 - Gated Recurrent Unit (GRU)
 - Long Short Term Memory (LSTM)
@@ -19,14 +19,15 @@ Our project comprises various machine learning models, including both neural net
 - LSTM Sequence-to-Sequence
 - GRU Sequence-to-Sequence with Attention
 - LSTM Sequence-to-Sequence with Attention
-- DLinear
-- NLinear
-### Transformer-Based Models
+- [DLinear](https://github.com/cure-lab/LTSF-Linear)
+- [NLinear](https://github.com/cure-lab/LTSF-Linear)
+The implementation of DLinear and NLinear is taken from their implementation. All the other models above are built using the "torch.nn" module from PyTorch, which provides a comprehensive set of tools and functionalities to construct and train neural networks efficiently. 
+### Transformers
 - Transformer
 - Informer
 - Autoformer
 - FEDformer
 - PatchTST
-### Statistical Model
+### Statistical Models
 - RandomWalk
 - SARIMAX
