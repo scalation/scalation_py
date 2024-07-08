@@ -4,6 +4,9 @@ import random
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class LSTMEncoder(nn.Module):
+    """
+    LSTM (Long Short Term Memory) encoder structure
+    """
     def __init__(self, hidden_dim, layer_dim, lags, horizons, n_features):
         super(LSTMEncoder, self).__init__()
         self.hidden_dim = hidden_dim
@@ -16,6 +19,9 @@ class LSTMEncoder(nn.Module):
 
 
 class LSTMDecoder(nn.Module):
+    """
+    LSTM (Long Short Term Memory) decoder structure
+    """
     def __init__(self, hidden_dim, layer_dim, lags, horizons, n_features):
         super(LSTMDecoder, self).__init__()
         self.lstm = nn.LSTM(n_features, hidden_dim, layer_dim, batch_first=True)
@@ -30,6 +36,9 @@ class LSTMDecoder(nn.Module):
 
 
 class LSTM_Seq2Seq(nn.Module):
+    """
+    This model uses an LSTM (Long Short Term Memory) encoder-decoder architecture to capture temporal dependencies in the input sequence and generate a corresponding output sequence.
+    """
     def __init__(self, configs):
         super(LSTM_Seq2Seq, self).__init__()
         hidden_dim = configs.d_model
