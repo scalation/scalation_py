@@ -12,5 +12,18 @@ The repository is organized into three main directories corresponding to the dif
 Our project comprises various machine learning models, including both neural networks and transformer-based models, as well as a statistical model implemented using a Seasonal AutoRegressive Integrated Moving Average with exogenous variables (SARIMAX). Each model has a separate codebase organized with a main script (main.py) for running experiments and a Jupyter notebook for the SARIMAX model.
 
 ### Machine Learning Models
+- Feed Forward Neural Network (FFNN)
+- Gated Recurrent Unit (GRU)
+- Long Short Term Memory (LSTM)
+- GRU Sequence-to-Sequence
+- LSTM Sequence-to-Sequence
+- GRU Sequence-to-Sequence with Attention
+- LSTM Sequence-to-Sequence with Attention
 ### Transformer Based Models
+- Transformer
+- Informer
+- Autoformer
+- FEDformer
+- PatchTST
 ### Statistical Model
+- SARIMAX
