@@ -1,8 +1,11 @@
 import torch
 from torch import nn
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda" if torch.cuda.is_available() else "CPU")
+
 class RandomWalk(nn.Module):
-    A Random Walk model is a simple type of time series model that assumes future values are equal to the current value plus a random step.
+    """
+    A Random Walk model is a simple time series model that assumes future values are equal to the current value plus a random step.
+    """
     def __init__(self, configs):
         super(RandomWalk, self).__init__()
         self.seq_len = configs.seq_len
