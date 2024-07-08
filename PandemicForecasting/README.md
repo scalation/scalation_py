@@ -34,7 +34,7 @@ All the models below are built using the [torch.nn](https://pytorch.org/docs/sta
 Thanks to the [PatchTST](https://github.com/yuqinie98/PatchTST) repository for providing all the transformers' code in one place.
 ### Statistical Models
 - RandomWalk
-- SARIMAX
+- [SARIMAX](https://www.statsmodels.org/dev/generated/statsmodels.tsa.statespace.sarimax.SARIMAX.html)
 
 The SARIMAX model is built using the [Statsmodel](https://www.statsmodels.org/stable/index.html) library.
 
