@@ -5,6 +5,9 @@ import random
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class GRUEncoder_Att(nn.Module):
+    """
+    GRU (Gated Recurrent Unit) encoder structure
+    """
     def __init__(self, hidden_dim, layer_dim, lags, horizons, n_features):
         super(GRUEncoder_Att, self).__init__()
         self.hidden_dim = hidden_dim
@@ -17,6 +20,9 @@ class GRUEncoder_Att(nn.Module):
 
 
 class GRUDecoder_Att(nn.Module):
+    """
+    GRU (Gated Recurrent Unit) decoder structure that includes attention mechanism
+    """
     def __init__(self, hidden_dim, layer_dim, lags, horizons, n_features):
         super(GRUDecoder_Att, self).__init__()
         self.layer_dim = layer_dim
@@ -54,6 +60,9 @@ class GRUDecoder_Att(nn.Module):
 
 
 class GRU_Seq2Seq_Att(nn.Module):
+    """
+    The GRU Seq2Seq with Attention (GRU_Seq2Seq_Att) model is an advanced sequence-to-sequence model incorporating an attention mechanism.
+    """
     def __init__(self, configs):
         super(GRU_Seq2Seq_Att, self).__init__()
         hidden_dim = configs.d_model
