@@ -13,8 +13,8 @@ Our project comprises various machine learning models, including both neural net
 
 ### Neural Networks
 - Feed Forward Neural Network (FFNN)
-- Gated Recurrent Unit (GRU)
-- Long Short Term Memory (LSTM)
+- [Gated Recurrent Unit](https://pytorch.org/docs/stable/generated/torch.nn.GRU.html#torch.nn.GRU) (GRU)
+- [Long Short Term Memory](https://pytorch.org/docs/stable/generated/torch.nn.LSTM.html#torch.nn.LSTM) (LSTM)
 - GRU Sequence-to-Sequence
 - LSTM Sequence-to-Sequence
 - GRU Sequence-to-Sequence with Attention
