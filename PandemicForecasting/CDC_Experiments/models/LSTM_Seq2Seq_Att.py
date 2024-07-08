@@ -5,6 +5,9 @@ import random
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class LSTMEncoder_Att(nn.Module):
+    """
+    LSTM (Long Short Term Memory) encoder structure
+    """
     def __init__(self, hidden_dim, layer_dim, lags, horizons, n_features):
         super(LSTMEncoder_Att, self).__init__()
         self.hidden_dim = hidden_dim
@@ -17,6 +20,9 @@ class LSTMEncoder_Att(nn.Module):
 
 
 class LSTMDecoder_Att(nn.Module):
+    """
+    LSTM (Long Short Term Memory) decoder structure that includes an attention mechanism
+    """
     def __init__(self, hidden_dim, layer_dim, lags, horizons, n_features):
         super(LSTMDecoder_Att, self).__init__()
         self.layer_dim = layer_dim
@@ -54,6 +60,9 @@ class LSTMDecoder_Att(nn.Module):
 
 
 class LSTM_Seq2Seq_Att(nn.Module):
+    """
+    The LSTM Seq2Seq with Attention (LSTM_Seq2Seq_Att) model is an advanced sequence-to-sequence model incorporating an attention mechanism.
+    """
     def __init__(self, configs):
         super(LSTM_Seq2Seq_Att, self).__init__()
         hidden_dim = configs.d_model
