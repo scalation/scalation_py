@@ -3,6 +3,9 @@ from torch import nn
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 class GRU(nn.Module):
+    """
+    A Gated Recurrent Unit (GRU) consists of a GRU layer followed by a fully connected (linear) layer.
+    """
     def __init__(self, configs):
         super(GRU, self).__init__()
         hidden_dim = configs.d_model
