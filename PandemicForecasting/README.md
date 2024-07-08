@@ -9,3 +9,8 @@ The repository is organized into three main directories corresponding to the dif
 - `CDC_Experiments/`: Contains the code and data for experiments conducted using CDC data.
 
 ## Getting Started
+Our project comprises various machine learning models, including both neural networks and transformer-based models, as well as a statistical model implemented using a Seasonal AutoRegressive Integrated Moving Average with exogenous variables (SARIMAX). Each model has a separate codebase organized with a main script (main.py) for running experiments and a Jupyter notebook for the SARIMAX model.
+
+### Machine Learning Models
+### Transformer Based Models
+### Statistical Model
