@@ -39,7 +39,7 @@ Thanks to the [PatchTST](https://github.com/yuqinie98/PatchTST) repository for p
 The SARIMAX model is built using the [Statsmodel](https://www.statsmodels.org/stable/index.html) library.
 
 ### Pandemic Datasets
-The datasets are located in the dataset directory for each codebase.
+The datasets are located in the `datasets/` directory for each codebase.
 - The COVID-19 daily data was extracted from the COVID-19 Dataset by [Our World in Data](https://github.com/owid/covid-19-data) (OWID) and converted to weekly data.
 - Centers for Disease Control and Prevention (CDC) COVID-19 Weekly Deaths Forecasts are collected from the [COVID-19 Forecast Hub](https://covid19forecasthub.org/). The data has been archived now and is available on [GitHub](https://github.com/scalation/data/blob/master/CDC-COVID-Data/concatenated_CDC_20_21_22_23.csv). It includes the 4-weeks ahead deaths forecasts for the models submitted to the CDC.
 - The ILI Weekly dataset is collected from the CDC and has the ILI patients' data recorded every week for the US. It is available on [GitHub](https://github.com/scalation/data/blob/master/Influenza/national_illness.csv). It is the same dataset as used by transformers.
