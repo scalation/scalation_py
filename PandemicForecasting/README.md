@@ -22,7 +22,7 @@ Our project comprises various machine learning models, including both neural net
 - [DLinear](https://arxiv.org/abs/2205.13504)
 - [NLinear](https://arxiv.org/abs/2205.13504)
   
-All the models above are built using the "torch.nn" module from PyTorch, which provides a comprehensive set of tools and functionalities to construct and train neural networks efficiently while DLinear and NLinear codes are taken from their repository [LTSF-Linear](https://github.com/cure-lab/LTSF-Linear).
+All the models above are built using the [torch.nn](https://pytorch.org/docs/stable/nn.html) module from PyTorch, which provides a comprehensive set of tools and functionalities to construct and train neural networks efficiently while DLinear and NLinear codes are taken from their repository [LTSF-Linear](https://github.com/cure-lab/LTSF-Linear).
 ### Transformers
 - [Transformer](https://arxiv.org/abs/1706.03762)
 - [Informer](https://arxiv.org/abs/2012.07436)
