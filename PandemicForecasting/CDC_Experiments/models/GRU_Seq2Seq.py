@@ -4,6 +4,9 @@ import random
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class GRUEncoder(nn.Module):
+    """
+    GRU (Gated Recurrent Unit) encoder structure
+    """
     def __init__(self, hidden_dim, layer_dim, lags, horizons, n_features):
         super(GRUEncoder, self).__init__()
         self.hidden_dim = hidden_dim
@@ -16,6 +19,9 @@ class GRUEncoder(nn.Module):
 
 
 class GRUDecoder(nn.Module):
+    """
+    GRU (Gated Recurrent Unit) decoder structure
+    """
     def __init__(self, hidden_dim, layer_dim, lags, horizons, n_features):
         super(GRUDecoder, self).__init__()
         self.gru = nn.GRU(n_features, hidden_dim, layer_dim, batch_first=True)
@@ -30,6 +36,9 @@ class GRUDecoder(nn.Module):
 
 
 class GRU_Seq2Seq(nn.Module):
+    """
+    This model uses a GRU (Gated Recurrent Unit) encoder-decoder architecture to capture temporal dependencies in the input sequence and generate a corresponding output sequence.
+    """
     def __init__(self, configs):
         super(GRU_Seq2Seq, self).__init__()
         hidden_dim = configs.d_model
