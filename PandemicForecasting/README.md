@@ -9,7 +9,7 @@ The repository is organized into three main directories corresponding to the dif
 - `CDC_Experiments/`: Contains the code and data for experiments conducted using Centers for Disease Control and Prevention (CDC) data.
 
 ## Getting Started
-Our project comprises various machine learning models, including both neural networks and transformer-based models, as well as statistical models. Each model has a separate codebase organized with a main script (**main.py**) for running experiments and a Jupyter Notebook for the Seasonal AutoRegressive Integrated Moving Average with eXogenous variables (SARIMAX) model.
+Our project comprises various machine learning models, including both neural networks and transformers, as well as statistical models. Each model has a separate codebase organized with a main script (**main.py**) for running experiments and a Jupyter Notebook for the Seasonal AutoRegressive Integrated Moving Average with eXogenous variables (SARIMAX) model.
 
 ### Neural Networks
 All the models below are built using the [torch.nn](https://pytorch.org/docs/stable/nn.html) module from PyTorch, which provides a comprehensive set of tools and functionalities to construct and train neural networks efficiently while DLinear and NLinear codes are taken from their repository [LTSF-Linear](https://github.com/cure-lab/LTSF-Linear).
