@@ -1,7 +1,11 @@
 import torch
 from torch import nn
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda:0" if torch.cuda.is_available() else "CPU")
+
 class LSTM(nn.Module):
+    """
+    A  Long Short-Term Memory (LSTM) consists of an LSTM layer followed by a fully connected (linear) layer.
+    """
     def __init__(self, configs):
         super(LSTM, self).__init__()
         hidden_dim = configs.d_model
