@@ -2,6 +2,10 @@ import torch
 from torch import nn
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 class FFNN(nn.Module):
+    """
+    A Feed Forward Neural Network (FFNN) consists of three linear layers. The network takes sequential input data, flattens it, and passes it through two hidden 
+    layers with ReLU activation functions, and then through an output layer.
+    """
     def __init__(self, configs):
         super(FFNN, self).__init__()
         units_layer1 = configs.units_layer1
