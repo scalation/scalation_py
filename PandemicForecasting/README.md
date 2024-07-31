@@ -5,7 +5,7 @@ This repository contains the code and resources for the paper **"How Effective a
 ## Repository Structure
 The repository is organized into three main directories corresponding to the different experimental setups used in the paper:
 - `Train-Test split/`: Contains the code and data for experiments using a traditional train-test split approach.
-- `RollingWindow/`: Contains the code and data for experiments using a rolling window approach.
+- `RollingWindow/`: Contains the code and data for experiments using a ReTraining (RT) approach.
 - `CDC_Experiments/`: Contains the code and data for experiments conducted using Centers for Disease Control and Prevention (CDC) data.
 
 ## Getting Started
