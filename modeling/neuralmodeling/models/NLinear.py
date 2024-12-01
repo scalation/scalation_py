@@ -13,17 +13,6 @@ class Model(nn.Module):
         #self.layer_norm = nn.LayerNorm(self.pred_len)
 
     def forward(self, x_enc, x_mark_enc, x_dec, x_mark_dec, use_tf=True):
-        """x = x_enc
-        # x: [Batch, Input length, Channel]
-        #seq_last = x[:, -1:, :].detach()
-        #x = x - seq_last
-        #num_polynomials = 10
-        #x = preprocess_input_data_with_orthogonal(x, num_polynomials)
-        #x = x_enc.sum(dim = -1).unsqueeze(-1)
-        x = self.activation(self.Linear(x.permute(0, 2, 1)))
-        x = self.layer_norm(x).permute(0, 2, 1)
-        #x = x + seq_last"""
-        
         x = x_enc
         seq_last = x[:, -1:, :].detach()
         x = x - seq_last
