@@ -26,11 +26,11 @@ pip install numpy matplotlib pandas scikit-learn torch==1.11.0
 ## Usage
 To run the code, open the run.ipynb notebook in Jupyter Notebook or JupyterLab. The notebook allows you to select different transformation techniques through the scale_method argument. The available options are:
 
-"log1p": Log1p transformation.
-"sqrt": Square root transformation.
-"box-cox": Box-Cox transformation.
-"standardscaler": StandardScaler.
-"yeo-johnson": Yeo-Johnson transformation.
+- "log1p": Log1p transformation.
+- "sqrt": Square root transformation.
+- "box-cox": Box-Cox transformation.
+- "standardscaler": StandardScaler.
+- "yeo-johnson": Yeo-Johnson transformation.
 
 ## Applying Differencing
 If you want to apply differencing along with the transformation (for example, for log1p), adjust the following arguments:
@@ -39,9 +39,9 @@ If you want to apply differencing along with the transformation (for example, fo
 - difforder: Set to either "first" for first differencing or "seasonal" for seasonal differencing.
 
 For example, to use a log1p transformation with first differencing, configure your parameters as follows:
-- ### scale_method = "log1p"
-- ### differencing = True
-- ### difforder = "first"
+- scale_method = "log1p"
+- differencing = True
+- difforder = "first"
 
 These parameters allow you to experiment with different preprocessing techniques to study their effects on forecast accuracy.
 
