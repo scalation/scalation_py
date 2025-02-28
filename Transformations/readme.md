@@ -1,6 +1,6 @@
 # Improving Channel-Independent Transformer via Statistical Preprocessing for Time Series Forecasting
 
-This repository contains the code accompanying the paper *"Improving Channel-Independent Transformer via Statistical Preprocessing for Time Series Forecasting."* The project demonstrates how integrating advanced statistical preprocessing techniques can improve the performance of channel-independent transformer models in time series forecasting.
+This repository contains the code accompanying the paper *"Improving Channel-Independent Transformer via Statistical Preprocessing for Time Series Forecasting."* The project demonstrates how integrating advanced statistical preprocessing techniques can improve the performance of channel-independent transformer models, namely PatchTST, in time series forecasting.
 
 ## Requirements
 
