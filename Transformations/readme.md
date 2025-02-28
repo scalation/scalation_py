@@ -39,9 +39,9 @@ If you want to apply differencing along with the transformation (for example, fo
 - difforder: Set to either "first" for first differencing or "seasonal" for seasonal differencing.
 
 For example, to use a log1p transformation with first differencing, configure your parameters as follows:
-- #scale_method# = "log1p"
-- differencing = True
-- difforder = "first"
+- ### scale_method = "log1p"
+- ### differencing = True
+- ### difforder = "first"
 
 These parameters allow you to experiment with different preprocessing techniques to study their effects on forecast accuracy.
 
