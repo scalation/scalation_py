@@ -75,15 +75,15 @@ We evaluate forecasts using:
 ---
 
 ## Optimized Hyperparameters
-<img src="images/table1" alt="A3T-GCN" width="600"/>
+<img src="images/table1.png" alt="A3T-GCN" width="600"/>
 
 ---
 ---
 
 ## Results
-<img src="images/table2" alt="A3T-GCN" width="600"/>
-<img src="images/table3" alt="A3T-GCN" width="600"/>
-<img src="images/table4" alt="A3T-GCN" width="600"/>
+<img src="images/table2.png" alt="A3T-GCN" width="600"/>
+<img src="images/table3.png" alt="A3T-GCN" width="600"/>
+<img src="images/table4.png" alt="A3T-GCN" width="600"/>
 
 ---
 
