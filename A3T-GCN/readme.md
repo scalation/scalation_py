@@ -73,17 +73,7 @@ We used a **sliding window forecasting** approach:
 We evaluate forecasts using:
 
 ### 🔹 Symmetric Mean Absolute Percentage Error (sMAPE)
-\[
-\text{sMAPE} = \frac{200}{n} \sum_{t=1}^n \frac{|y_t - \hat{y}_t|}{|y_t| + |\hat{y}_t|}
-\]
-- Bounded between 0% (perfect) and 200% (completely incorrect)
-- Useful when dealing with low or zero counts in pandemics
-
 ### 🔹 Mean Absolute Error (MAE)
-\[
-\text{MAE} = \frac{1}{n} \sum_{t=1}^n |y_t - \hat{y}_t|
-\]
-- Measures average absolute deviation between predictions and actual values
   
 ---
 
@@ -133,8 +123,8 @@ If you use this work in your research, please consider citing the corresponding 
 For questions or collaboration inquiries, feel free to reach out:
 
 **Subas Rana**  
-Ph.D. Candidate 
-Graduate Research Assistant
+Ph.D. Candidate  
+Graduate Research Assistant  
 University of Georgia  
 📧 subas.rana187@gmail.com
 📧 subas.rana@uga.edu
