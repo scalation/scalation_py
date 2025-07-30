@@ -78,7 +78,6 @@ We evaluate forecasts using:
 <img src="images/table1.png" alt="A3T-GCN" width="600"/>
 
 ---
----
 
 ## Results
 <img src="images/table2.png" alt="A3T-GCN" width="600"/>
