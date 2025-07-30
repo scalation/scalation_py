@@ -1,22 +1,22 @@
-# Scalation Python
+This repository is a comprehensive collection of models, transformations, and experiments focused on **pandemic forecasting**, with an emphasis on **multivariate time series modeling** using both statistical and deep learning methods.
 
-## Paperssss
-* A Survey of Deep-Learning and Foundation Models for Time Series Forecasting\
-[Paper](https://arxiv.org/pdf/2401.13912.pdf) | [Supplement](https://arxiv.org/pdf/2401.13912.pdf)
+Developed as part of a Ph.D. research, this toolkit has traditional models like **SARIMA**, modern architectures such as **Transformer-based networks** and **Graph Convolutional Networks (GCNs)**, enhanced through advanced preprocessing techniques.
 
-## Citations
-```
-@article{miller2024survey,
-  title={A survey of deep learning and foundation models for time series forecasting},
-  author={Miller, John A and Aldosari, Mohammed and Saeed, Farah and Barna, Nasid Habib and Rana, Subas and Arpinar, I Budak and Liu, Ninghao},
-  journal={arXiv preprint arXiv:2401.13912},
-  year={2024}
+```Citations```
+@inproceedings{rana2023exploring,
+  title={Exploring the predictive power of correlation and mutual information in attention temporal graph convolutional network for COVID-19 forecasting},
+  author={Rana, Subas and Barna, Nasid Habib and Miller, John A},
+  booktitle={International Conference on Big Data},
+  pages={18--33},
+  year={2023},
+  organization={Springer}
 }
-```
-## Acknowledgments
-The implementation of the statistical and neural models is based on the following projects:
-* [statsmodels](https://www.statsmodels.org/stable/index.html)
-* [Time Series Library](https://github.com/thuml/Time-Series-Library/tree/main)
 
-## License
-The scalation_py repo is licensed under an MIT License. Please see the [license file](https://github.com/scalation/scalation_py/blob/main/License.txt). 
+@inproceedings{rana2024effective,
+  title={How Effective are Time Series Models for Pandemic Forecasting?},
+  author={Rana, Subas and Miller, John A and Nesbit, John and Barna, Nasid Habib and Aldosari, Mohammed and Arpinar, Ismailcem Budak},
+  booktitle={International Conference on Big Data},
+  pages={3--17},
+  year={2024},
+  organization={Springer}
+}
