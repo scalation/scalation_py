@@ -1,6 +1,11 @@
+# Branch: dev_sr
+
 This repository is a comprehensive collection of models, transformations, and experiments focused on **pandemic forecasting**, with an emphasis on **multivariate time series modeling** using both statistical and deep learning methods.
 
 Developed as part of a Ph.D. research, this toolkit has statistical models like **SARIMAX**, state-of-the-art architectures such as **Transformer-based networks**, and **Graph Neural Networks (GNNs)**.
+
+> 🔍 **Note:** All experiments, models, and implementations related to this research are maintained in the [`dev_sr`](https://github.com/scalation/scalation_py/tree/dev_sr) branch, which contains the author's individual contributions, including advanced normalization techniques, graph-based modeling, and transformer adaptations for multivariate time series.
+
 
 ## Citation
 
