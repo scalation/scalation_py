@@ -40,7 +40,7 @@ We use the **State-level Weekly COVID-19 Dataset**:
 - Source: [JHU CSSE COVID-19 Data](https://github.com/CSSEGISandData/COVID-19)
 
 ### 🧼 Preprocessing:
-- Cumulative daily values with negatives were converted to weekly aggregates.
+- Cumulative daily values were converted to weekly aggregates.
 - Negative artifacts (e.g., -60 deaths on May 1, 2020 in Maryland) were resolved via weekly smoothing.
 - Only U.S. states were retained; other regions were dropped.
 - Features used: `Confirmed`, `Deaths` (others had missing data).
