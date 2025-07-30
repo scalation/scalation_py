@@ -17,7 +17,20 @@ We use the **A3T-GCN** model implemented in **PyGT** for time series forecasting
 By encoding dependencies among highly correlated regions, our model is able to forecast pandemic trends more accurately than traditional baselines.
 
 ---
+### 🧠 A3T-GCN Model Architecture
 
+Below is the architecture of the **A3T-GCN** model, which takes as input:
+
+- A **feature matrix** (node features per state)
+- An **adjacency matrix** constructed using correlation-based or mutual information techniques
+
+These are fed into the `StaticGraphTemporalSignal` iterator from **PyGT**, which generates a `Data` object from PyTorch Geometric. Each object represents a **snapshot of the graph**, maintaining the same graph structure while varying the node features over time.
+
+These temporal snapshots are then passed as **historical input sequences** to the GCN layers of A3T-GCN. The GCN performs operations over the static graph and dynamically changing features to compute **hidden state representations**, which are then used for forecasting future values.
+
+![A3T-GCN Architecture](images/arch.png)
+
+---
 ## 📊 Dataset
 
 We use the **State-level Weekly COVID-19 Dataset**:
