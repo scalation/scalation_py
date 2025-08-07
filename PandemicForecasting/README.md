@@ -1,6 +1,6 @@
 # How Effective are Time Series Models for Pandemic Forecasting?
 
-This repository contains the code and resources for the paper **"How Effective are Time Series Models for Pandemic Forecasting?"**. This research explores the effectiveness of various time series models in predicting pandemics. 
+This repository contains the code and resources for the paper [**"How Effective are Time Series Models for Pandemic Forecasting?"**](https://link.springer.com/chapter/10.1007/978-3-031-77088-3_1). This research explores the effectiveness of various time series models in predicting pandemics.
 
 ## Repository Structure
 The repository is organized into three main directories corresponding to the different experimental setups used in the paper:
