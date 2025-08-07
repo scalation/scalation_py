@@ -8,7 +8,7 @@ Developed as part of a Ph.D. research, this toolkit includes statistical models,
 
 ## Main Projects
 
-### [A3T-GCN]([https://link.springer.com/chapter/10.1007/978-3-031-44725-9_2](https://github.com/scalation/scalation_py/tree/dev_sr/A3T-GCN)
+### [A3T-GCN](https://github.com/scalation/scalation_py/tree/dev_sr/A3T-GCN)
 Implements a modified Attention Temporal Graph Convolutional Network for COVID-19 forecasting across U.S. states using Pearson correlation and mutual information-based adaptive graphs.  
 📄 *Published as:* [*Exploring the Predictive Power of Correlation and Mutual Information in A3T-GCN* (Springer, 2023)](https://link.springer.com/chapter/10.1007/978-3-031-44725-9_2)
 
