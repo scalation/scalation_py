@@ -6,6 +6,19 @@ Developed as part of a Ph.D. research, this toolkit includes statistical models,
 
 > 🔍 **Note:** All experiments, models, and implementations related to this research are maintained in the [`dev_sr`](https://github.com/scalation/scalation_py/tree/dev_sr) branch, which contains the author's individual contributions, including advanced normalization techniques, graph-based modeling, and transformers for multivariate time series.
 
+## Main Projects
+
+### 🔗 [A3T-GCN](https://link.springer.com/chapter/10.1007/978-3-031-44725-9_2)
+Implements a modified Attention Temporal Graph Convolutional Network for COVID-19 forecasting across U.S. states using Pearson correlation and mutual information-based adaptive graphs.  
+📄 *Published as:* [*Exploring the Predictive Power of Correlation and Mutual Information in A3T-GCN* (Springer, 2023)](https://link.springer.com/chapter/10.1007/978-3-031-44725-9_2)
+
+### 🔗 [PandemicForecasting](https://link.springer.com/chapter/10.1007/978-3-031-77088-3_1)
+Benchmarks 16 statistical and deep learning models for forecasting COVID-19 and ILI cases. It highlights that model effectiveness does not always align with complexity. The project evaluates real-world CDC models across early-stage and large-scale pandemic scenarios, incorporates a retraining strategy to handle scarce data, and applies targeted hyperparameter tuning to improve model generalization.
+📄 *Published as:* [*How Effective are Time Series Models for Pandemic Forecasting?* (Springer, 2024)](https://link.springer.com/chapter/10.1007/978-3-031-77088-3_1)
+
+### 🔬 Transformations (Ongoing)
+This topic focuses on integrating statistical preprocessing methods and adaptive reversible instance normalizations into deep learning pipelines. It includes statistical and adaptive normalization, skew-aware transformations, and covariance-based scaling for multivariate time series to enhance the robustness and generalization of Transformer models in time series forecasting.
+
 
 ## Citation
 
