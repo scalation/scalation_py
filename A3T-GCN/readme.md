@@ -1,6 +1,7 @@
 # A3T-GCN: Attention Temporal Graph Convolutional Network
 
-This repository presents our work on COVID-19 case forecasting using the **A3T-GCN**. Our model integrates spatiotemporal dynamics across U.S. states using adaptive graph construction techniques and attention mechanisms.
+This repository presents our work titled [**Exploring the Predictive Power of Correlation and Mutual Information in Attention Temporal Graph Convolutional Network for COVID-19 Forecasting**](https://link.springer.com/chapter/10.1007/978-3-031-44725-9_2).  
+Our model, modified **A3T-GCN**, integrates spatiotemporal dynamics across U.S. states using adaptive graph construction techniques and attention mechanisms.
 
 ---
 
