@@ -119,7 +119,7 @@ def plot_forecasts(self) -> None:
 
     for h in self.horizons:
 
-        if 'normalized' in self.plot_mode:
+        if 'transformed' in self.plot_mode:
             forecasts = self.forecast_tensor
             if 'test' in self.plot_mode:
                 actual = self.data.iloc[self.train_size:, :]
@@ -134,7 +134,7 @@ def plot_forecasts(self) -> None:
                 actual = self.data_
             idx = actual.index
         else:
-            raise ValueError("Invalid plot_mode. Expected 'all_normalized', 'all_original', 'test_normalized', or 'test_original'.")
+            raise ValueError("Invalid plot_mode. Expected 'all_transformed', 'all_original', 'test_transformed', or 'test_original'.")
         if self.features == 'ms':
             forecasts = forecasts[:, h-1, self.target_feature]
             actual = actual.iloc[:, self.target_feature].values
@@ -155,9 +155,7 @@ def plot_forecasts(self) -> None:
                         
             if self.transformation is None or 'original' in self.plot_mode:
                 ylabel = f"Original Scale"
-            elif self.transformation == 'z-score' and 'normalized' in self.plot_mode:
-                ylabel = f"Normalized Scale"
-            elif (self.transformation == 'log1p' or self.transformation == 'log_z-score') and 'normalized' in self.plot_mode:
+            else:
                 ylabel = f"Transformed Scale"
     
             plt.ylabel(ylabel)

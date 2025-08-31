@@ -79,10 +79,10 @@ class Experiment(object):
                     f"Received: {self.forecast_type}."
                 )
 
-            if self.plot_mode not in ['all_original', 'all_normalized', 'test_original', 'test_normalized',
+            if self.plot_mode not in ['all_original', 'all_transformed', 'test_original', 'test_Transformed',
                                              None]:
                 raise ValueError(
-                    f"Invalid value for 'plot_mode'. Expected one of the following 'all_original', 'all_normalized', 'test_original', 'test_normalized', or None\n"
+                    f"Invalid value for 'plot_mode'. Expected one of the following 'all_original', 'all_transformed', 'test_original', 'test_transformed', or None\n"
                     f"Received: {self.plot_mode}."
                 )
 

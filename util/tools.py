@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 from tabulate import tabulate
-import pandas as pd
+import re
 
 class dotdict(dict):
     __getattr__ = dict.get
@@ -78,13 +78,18 @@ def display_save_results(self):
     self.qof.loc[len(self.qof)] = averages
     target = self.args['target']
     print(f'\033[1mQuality of Fit (QoF) for {self.model_name} - Task: {self.features.upper()} - Target: {target}\033[0m')
-    columns_to_display = self.args['qof_metrics']
-    columns_to_display.insert(0, "h")
-    columns_to_display.insert(1, "n")
-    print(tabulate(self.qof[columns_to_display].round(4), headers='keys', tablefmt='pretty', showindex=False))
+    qof_metrics_ = self.args['qof_metrics']
+    qof_metrics_.insert(0, "h")
+    qof_metrics_.insert(1, "n")
+    qof_metrics_ = [re.sub(r'\bTransformed\b', f"Transformed ({self.transformation})", h) for h in qof_metrics_]
+    self.qof.columns = [
+        re.sub(r'\bTransformed\b', f"Transformed ({self.transformation})", col)
+        for col in self.qof.columns
+    ]
+    print(tabulate(self.qof[qof_metrics_].round(4), headers='keys', tablefmt='pretty', showindex=False))
     with open(file_path, 'a', newline='') as file:
         file.write('\n' + self.model_name + ' ' + self.validation + '\n')
-        self.qof[columns_to_display].to_csv(file, header=True, index=False, float_format='%.3f')
+        self.qof[qof_metrics_].to_csv(file, header=True, index=False, float_format='%.3f')
 
 def display_model_info(self):
     model_info = [

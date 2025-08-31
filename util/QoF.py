@@ -296,8 +296,8 @@ def diagnose(self):
             columns=[
                 'h',
                 'n',
-                "MSE Normalized", "RMSE Normalized", "MAE Normalized", "sMAPE Normalized", "MASE Normalized",
-                "SSE Normalized", "SST Normalized", "R Squared Normalized", "Corr Normalized", "Bias Normalized",
+                "MSE Transformed", "RMSE Transformed", "MAE Transformed", "sMAPE Transformed", "MASE Transformed",
+                "SSE Transformed", "SST Transformed", "R Squared Transformed", "Corr Transformed", "Bias Transformed",
                 "MSE Original", "RMSE Original", "MAE Original", "sMAPE Original", "MASE Original",
                 "SSE Original", "SST Original", "R Squared Original", "Corr Original", "Bias Original"
             ]
@@ -363,7 +363,7 @@ def diagnose(self):
         self.qof = pd.concat([self.qof, pd.DataFrame([row])], ignore_index=True)
 
     if self.args.get('internal_diagnose'):
-        return self.qof_metrics['MAE Normalized'], self.qof_metrics['MAE Original']
+        return self.qof_metrics['MAE Transformed'], self.qof_metrics['MAE Original']
     '''else:
         for metric in self.args['qof_metrics'][2:]:
 
