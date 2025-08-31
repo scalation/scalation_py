@@ -92,7 +92,7 @@ def display_model_info(self):
         ["Target", self.target],
         ["Forecasting horizons", self.pred_len],
         ["Prediction features", self.features.upper()],
-        ["transformation", self.transformation],
+        ["Transformation", self.transformation],
         ["Data shape", self.data.shape],
         ["Train size", self.train_size],
         ["Test size", self.test_size],
