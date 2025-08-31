@@ -34,6 +34,7 @@ def plot_time_series(self) -> None:
     None
 
     """
+    show_grid = True
     data = self.data_
     fig, ax = plt.subplots(figsize=(4, 2.5))
     plt.plot(data[[self.target.lower()]], color = 'black', marker = 'o', linewidth=0.5, markersize = 1)
@@ -43,6 +44,10 @@ def plot_time_series(self) -> None:
     plt.savefig(file_path, bbox_inches='tight')
     plt.ylabel("Original Scale")
     plt.xlabel("Time")
+    if show_grid:
+        plt.grid(True, which='both', linestyle='-', linewidth=0.5, alpha=0.3)
+    else:
+        plt.grid(False)
     plt.show()
     plt.close()
 
@@ -60,6 +65,7 @@ def plot_acf(self) -> None:
     None
 
     """
+    show_grid = True
     fig, ax = plt.subplots(figsize=(4, 2.5))
     data = self.data_[self.target.lower()].iloc[self.start_index_acf_pacf:].copy()
     if self.diff_order_acf_pacf is not None:
@@ -70,6 +76,10 @@ def plot_acf(self) -> None:
     ax.set_title('ACF for ' + self.target.upper())
     file_path = os.path.join(self.folder_path_plots, str(self.dataset) + '_ACF.png')
     fig.savefig(file_path, bbox_inches='tight')
+    if show_grid:
+        plt.grid(True, which='both', linestyle='-', linewidth=0.5, alpha=0.3)
+    else:
+        plt.grid(False)
     plt.show()
     plt.close(fig)
     
@@ -85,6 +95,7 @@ def plot_pacf(self) -> None:
     -------
     None
     """
+    show_grid = True
     fig, ax = plt.subplots(figsize=(4, 2.5))
     data = self.data_[self.target.lower()].iloc[self.start_index_acf_pacf:].copy()
     if self.diff_order_acf_pacf is not None:
@@ -95,6 +106,10 @@ def plot_pacf(self) -> None:
     ax.set_title('PACF for ' + self.target.upper())
     file_path = os.path.join(self.folder_path_plots, str(self.dataset) + '_PACF.png')
     fig.savefig(file_path, bbox_inches='tight')
+    if show_grid:
+        plt.grid(True, which='both', linestyle='-', linewidth=0.5, alpha=0.3)
+    else:
+        plt.grid(False)
     plt.show()
     plt.close(fig)
     
