@@ -3,18 +3,16 @@
 This repository contains the implementation and experiments for the paper:  
 **“Normalization in Transformers”**  
 
-We study the effect of different normalization and preprocessing strategies on Transformer-based time series forecasting models.  
-
 ---
 
-## ✨ Contributions
+### Contributions
 - **Preprocessing Techniques**: effect of different normalization and preprocessing strategies on Transformers. 
 - **CoIN**: an instance normalization technique for time series, implemented in [`layers/CoIN.py`](layers/CoIN.py).  
 - **Multivariate Box–Cox**: an extension of the classic Box–Cox transformation to the multivariate setting, used as a preprocessing option.  
 
 ---
 
-## 📂 Repository Structure
+### Repository Structure
 
 - **`PatchTST/`**  
   Codebase from the PatchTST paper, adapted for our experiments.  
@@ -33,7 +31,7 @@ We study the effect of different normalization and preprocessing strategies on T
 
 ---
 
-## Preprocessing Methods
+### Preprocessing Methods
 
 We evaluate the following preprocessing and normalization techniques.  
 These can be specified via the `--scale_method` argument in the code or notebooks:  
@@ -45,7 +43,7 @@ These can be specified via the `--scale_method` argument in the code or notebook
 - `standardscaler`  
 - `multi-box-cox` (our proposed **multivariate Box–Cox**)
 
-## CoIN Configuration
+### CoIN Configuration
 
 To use **CoIN**, set the following parameters in your config or training script:
 
@@ -55,13 +53,16 @@ per_h_cutoff = K
 blend_tail_steps = H_cutoff
 input_blend = True
 blend_mode = 'hard'
+```
 ---
 
 ## 🔧 Installation
 
+```bash
 git clone -b dev_sr https://github.com/scalation/scalation_py.git
 cd scalation_py/Normalizations/TimeXer+iTransformer
 pip install -r requirements.txt
+```
 
 ## 🚀 Run Experiments
 
