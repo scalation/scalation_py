@@ -3,11 +3,12 @@
 This repository contains the implementation and experiments for the paper:  
 **“Normalization in Transformers”**  
 
-We study the effect of different normalization and preprocessing strategies on Transformer-based time series forecasting models. In addition to existing methods, we propose **CoIN**, an instance normalization technique designed to improve Transformer performance on time series data.  
+We study the effect of different normalization and preprocessing strategies on Transformer-based time series forecasting models.  
+Our contributions include:  
+- **CoIN**: an instance normalization technique for time series, implemented in [`layers/CoIN.py`](layers/CoIN.py).  
+- **Multivariate Box–Cox**: an extension of the classic Box–Cox transformation to the multivariate setting, used as a preprocessing option.  
 
----
-
-## 📂 Repository Structure
+## Repository Structure
 
 - **`PatchTST/`**  
   Codebase from the PatchTST paper, adapted for our experiments.  
@@ -24,8 +25,6 @@ We study the effect of different normalization and preprocessing strategies on T
 - **`run_illness.ipynb`**  
   Notebook to reproduce experiments on the **ILI (Influenza-Like Illness) dataset**.  
 
----
-
 ## Preprocessing Methods
 
 We evaluate the following preprocessing and normalization techniques.  
@@ -36,10 +35,8 @@ These can be specified via the `--scale_method` argument in the code or notebook
 - `box-cox`  
 - `yeo-johnson`  
 - `standardscaler`  
-- `multi-box-cox`  
-
----
-
+- `multi-box-cox`
+- 
 ## Usage
 
 ### Installation
@@ -48,7 +45,7 @@ git clone https://github.com/your-username/Normalization-in-Transformers.git
 cd Normalization-in-Transformers
 pip install -r requirements.txt
 
-## Run Experiments
+### Run Experiments
 
 After installation, you can reproduce our results using the provided notebooks:
 
@@ -58,7 +55,7 @@ After installation, you can reproduce our results using the provided notebooks:
 You can switch preprocessing methods by setting the `--scale_method` parameter to one of:  
 `[log1p, sqrt, box-cox, yeo-johnson, standardscaler, multi-box-cox]`
 
-## Hyperparameters
+### Hyperparameters
 
 The hyperparameters used in our experiments are summarized below:
 
