@@ -56,7 +56,7 @@ pip install -r requirements.txt
 
 After installation, you can reproduce our results using the provided notebooks:
 
-- **COVID-19 dataset:** open and run [`run_COVID.ipynb`](run_COVID.ipynb)  
+- **COVID-19 dataset:** open and run [`run_COVID.ipynb`](run_covid.ipynb)  
 - **ILI dataset:** open and run [`run_illness.ipynb`](run_illness.ipynb)  
 
 You can switch preprocessing methods by setting the `--scale_method` parameter to one of:  [log1p, sqrt, box-cox, yeo-johnson, standardscaler, multi-box-cox]
@@ -67,8 +67,8 @@ To use **CoIN**, set the following parameters in your config or training script:
 
 ```python
 per_h_enable = True
-per_h_cutoff = K (See hyperparameters table below)
-blend_tail_steps = H_cutoff (See hyperparameters table below)
+per_h_cutoff = H_cutoff (See hyperparameters table below)
+blend_tail_steps = K (See hyperparameters table below)
 input_blend = True
 blend_mode = 'hard'
 ```
