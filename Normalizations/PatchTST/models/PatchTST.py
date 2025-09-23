@@ -41,7 +41,7 @@ import matplotlib.pyplot as plt
 
 #from collections import OrderedDict
 # from layers.PatchTST_layers import *
-from layers.RevIN import RevIN
+from layers.CoIN import CoIN
 
 # Cell
 class PatchTST_backbone(nn.Module):
@@ -56,9 +56,9 @@ class PatchTST_backbone(nn.Module):
         
         super().__init__()
         
-        # RevIn
+        # CoIN
         self.revin = revin
-        if self.revin: self.revin_layer = RevIN(c_in, subtract_last=subtract_last,
+        if self.revin: self.revin_layer = CoIN(c_in, subtract_last=subtract_last,
                 per_h_enable=per_h_enable,
                 per_h_cutoff=per_h_cutoff,
                 input_blend=input_blend,
