@@ -5,7 +5,7 @@ from layers.Transformer_EncDec import Encoder, EncoderLayer
 from layers.SelfAttention_Family import FullAttention, AttentionLayer
 from layers.Embed import DataEmbedding_inverted
 import numpy as np
-from layers.RevIN import RevIN
+from layers.CoIN import CoIN
 
 
 class iTransformer(nn.Module):
@@ -46,7 +46,7 @@ class iTransformer(nn.Module):
             self.projection = nn.Linear(configs.d_model, configs.pred_len, bias=True)
             
         if self.use_norm: 
-            self.revin_layer = RevIN(configs.enc_in, subtract_last=configs.subtract_last,
+            self.revin_layer = CoIN(configs.enc_in, subtract_last=configs.subtract_last,
                 per_h_enable=configs.per_h_enable,
                 per_h_cutoff=configs.per_h_cutoff,
                 input_blend=configs.input_blend,
