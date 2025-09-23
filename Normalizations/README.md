@@ -42,18 +42,6 @@ These can be specified via the `--scale_method` argument in the code or notebook
 - `yeo-johnson`  
 - `standardscaler`  
 - `multi-box-cox` (our proposed **multivariate Box–Cox**)
-
-### CoIN Configuration
-
-To use **CoIN**, set the following parameters in your config or training script:
-
-```python
-per_h_enable = True
-per_h_cutoff = K
-blend_tail_steps = H_cutoff
-input_blend = True
-blend_mode = 'hard'
-```
 ---
 
 ### Installation
@@ -73,7 +61,18 @@ After installation, you can reproduce our results using the provided notebooks:
 
 You can switch preprocessing methods by setting the `--scale_method` parameter to one of:  [log1p, sqrt, box-cox, yeo-johnson, standardscaler, multi-box-cox]
 
-## Hyperparameters
+#### CoIN Configuration
+
+To use **CoIN**, set the following parameters in your config or training script:
+
+```python
+per_h_enable = True
+per_h_cutoff = K (See hyperparameters table below)
+blend_tail_steps = H_cutoff (See hyperparameters table below)
+input_blend = True
+blend_mode = 'hard'
+```
+### Hyperparameters
 
 The hyperparameters used in our experiments are summarized below:
 
