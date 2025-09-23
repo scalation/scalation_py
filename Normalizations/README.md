@@ -56,7 +56,7 @@ blend_mode = 'hard'
 ```
 ---
 
-## 🔧 Installation
+### Installation
 
 ```bash
 git clone -b dev_sr https://github.com/scalation/scalation_py.git
@@ -64,7 +64,7 @@ cd scalation_py/Normalizations/TimeXer+iTransformer
 pip install -r requirements.txt
 ```
 
-## 🚀 Run Experiments
+### Run Experiments
 
 After installation, you can reproduce our results using the provided notebooks:
 
@@ -78,7 +78,7 @@ You can switch preprocessing methods by setting the `--scale_method` parameter t
 The hyperparameters used in our experiments are summarized below:
 
 ![All Hyperparameters](images/hyperparams.png)
-![CoIN Hyperparameters](images/coIN.png)
+![CoIN Hyperparameters](images/coin.png)
 
 
 
