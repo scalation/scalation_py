@@ -8,7 +8,7 @@ We study the effect of different normalization and preprocessing strategies on T
 ---
 
 ## ✨ Contributions
-
+- **Preprocessing Techniques**: effect of different normalization and preprocessing strategies on Transformers. 
 - **CoIN**: an instance normalization technique for time series, implemented in [`layers/CoIN.py`](layers/CoIN.py).  
 - **Multivariate Box–Cox**: an extension of the classic Box–Cox transformation to the multivariate setting, used as a preprocessing option.  
 
@@ -45,7 +45,7 @@ These can be specified via the `--scale_method` argument in the code or notebook
 - `standardscaler`  
 - `multi-box-cox` (our proposed **multivariate Box–Cox**)
 
-  ## CoIN Configuration
+## CoIN Configuration
 
 To use **CoIN**, set the following parameters in your config or training script:
 
