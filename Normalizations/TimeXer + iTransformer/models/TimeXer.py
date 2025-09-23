@@ -4,7 +4,7 @@ import torch.nn.functional as F
 from layers.SelfAttention_Family import FullAttention, AttentionLayer
 from layers.Embed import DataEmbedding_inverted, PositionalEmbedding
 import numpy as np
-from layers.RevIN import RevIN
+from layers.CoIN import CoIN
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
@@ -132,7 +132,7 @@ class TimeXer(nn.Module):
         
         
         if self.use_norm: 
-            self.revin_layer = RevIN(configs.enc_in, subtract_last=configs.subtract_last,
+            self.revin_layer = CoIN(configs.enc_in, subtract_last=configs.subtract_last,
                 per_h_enable=configs.per_h_enable,
                 per_h_cutoff=configs.per_h_cutoff,
                 input_blend=configs.input_blend,
