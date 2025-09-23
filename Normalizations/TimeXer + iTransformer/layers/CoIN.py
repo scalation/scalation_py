@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import math
 
-class RevIN(nn.Module):
+class CoIN(nn.Module):
     def __init__(self, num_features: int, eps=1e-5, subtract_last=False,
                  per_h_enable = True,
                  per_h_cutoff =6,
