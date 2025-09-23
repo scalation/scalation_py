@@ -56,8 +56,8 @@ pip install -r requirements.txt
 
 After installation, you can reproduce our results using the provided notebooks:
 
-- **COVID-19 dataset:** open and run [`run_COVID.ipynb`](run_covid.ipynb)  
-- **ILI dataset:** open and run [`run_illness.ipynb`](run_illness.ipynb)  
+- **COVID-19 dataset:** open and run [`run_COVID.ipynb`]([run_covid.ipynb](https://github.com/scalation/scalation_py/blob/dev_sr/Normalizations/TimeXer%20%2B%20iTransformer/run_covid.ipynb))  
+- **ILI dataset:** open and run [`run_illness.ipynb`]([run_illness.ipynb](https://github.com/scalation/scalation_py/blob/dev_sr/Normalizations/TimeXer%20%2B%20iTransformer/run_illness.ipynb))  
 
 You can switch preprocessing methods by setting the `--scale_method` parameter to one of:  [log1p, sqrt, box-cox, yeo-johnson, standardscaler, multi-box-cox]
 
