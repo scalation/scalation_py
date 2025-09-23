@@ -30,19 +30,20 @@ Our contributions include:
 We evaluate the following preprocessing and normalization techniques.  
 These can be specified via the `--scale_method` argument in the code or notebooks:  
 
+- `standardscaler`
 - `log1p`  
 - `sqrt`  
 - `box-cox`  
-- `yeo-johnson`  
-- `standardscaler`  
+- `yeo-johnson`    
 - `multi-box-cox`
-- 
+- `difference` and `difforder` for differencing
+
 ## Usage
 
 ### Installation
 ```bash
-git clone https://github.com/your-username/Normalization-in-Transformers.git
-cd Normalization-in-Transformers
+git clone https://github.com/scalation/scalation_py/edit/dev_sr/Normalizations.git
+cd Normalizations/TimeXer+iTransformer
 pip install -r requirements.txt
 
 ### Run Experiments
