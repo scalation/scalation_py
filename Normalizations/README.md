@@ -72,13 +72,6 @@ blend_tail_steps = K (See hyperparameters table below)
 input_blend = True
 blend_mode = 'hard'
 ```
-### Hyperparameters
-
-The hyperparameters used in our experiments are summarized below:
-
-![All Hyperparameters](images/hyperparams.png)
-![CoIN Hyperparameters](images/coin.png)
-
 
 
 
