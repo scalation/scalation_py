@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scalationpy"
+version = "0.0.1"
+description = "Scalation statistical and neural time series models in Python"
+readme = "README.md"
+requires-python = ">=3.9"
+
+dependencies = [
+  "numpy==1.26.4",
+  "pandas==2.2.3",
+  "matplotlib==3.9.4",
+  "torch",
+  "tabulate==0.8.9",
+  "statsmodels==0.13.5",
+  "prettytable==3.5.0",
+  "scipy==1.13.1",
+  "scikit-learn==1.6.1",
+  "tqdm==4.66.4",
+  "ray==2.4.0",
+  "seaborn==0.13.2",
+  "einops==0.6.0",
+  "sympy==1.13.1",
+  "ruptures==1.1.9",
+  "joblib==1.4.0",
+  "entmax==1.3",
+  "transformers==4.29.1"
+]
+
+authors = [
+  { name = "ScalationPy Team" }
+]
+
+[project.urls]
+Homepage = "https://github.com/scalation/scalation_py"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["modeling*", "util*"]
