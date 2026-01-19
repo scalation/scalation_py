@@ -17,7 +17,7 @@ Benchmarks 16 statistical and deep learning models for forecasting COVID-19 and 
 📄 *Published as:* [*How Effective are Time Series Models for Pandemic Forecasting?* (Springer, 2024)](https://link.springer.com/chapter/10.1007/978-3-031-77088-3_1)
 
 ### [Normalizations](https://github.com/scalation/scalation_py/tree/dev_sr/Normalizations)
-Transformer models for time series forecasting often rely on standard normalization methods, which can struggle with tackling real-world data challenges such as distributional shifts, skewness, non-stationarity, and heteroscedasticity. This project explores the integration of robust statistical preprocessing techniques—including log, Box-Cox, Yeo-Johnson, square root, and differencing—into transformer-based architectures. The objective is to tackle real-world data challenges and improve time series forecasting. 
+Transformer models for time series forecasting often rely on standard normalization methods, which can struggle with tackling real-world data challenges such as distributional shifts, skewness, non-stationarity, and heteroscedasticity. This project explores the integration of robust statistical preprocessing techniques—including log, Box-Cox, Yeo-Johnson, square root, and differencing—into transformer-based architectures. The objective is to tackle real-world data challenges and improve time series forecasting. 📄 *Submitted to [EuroSys 2026](https://2026.eurosys.org/)*. 
 
 ## Citation
 
