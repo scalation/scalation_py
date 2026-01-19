@@ -16,8 +16,8 @@ Implements a modified Attention Temporal Graph Convolutional Network for COVID-1
 Benchmarks 16 statistical and deep learning models for forecasting COVID-19 and ILI cases. It highlights that model effectiveness does not always align with complexity. The project evaluates real-world CDC models across early-stage and large-scale pandemic scenarios, incorporates a retraining strategy to handle scarce data, and applies targeted hyperparameter tuning to improve model generalization.
 📄 *Published as:* [*How Effective are Time Series Models for Pandemic Forecasting?* (Springer, 2024)](https://link.springer.com/chapter/10.1007/978-3-031-77088-3_1)
 
-### [Transformations](https://github.com/scalation/scalation_py/tree/dev_sr/Transformations) (Ongoing)
-Transformer models for time series forecasting often rely on standard normalization methods, which can struggle with real-world data challenges such as skewness, non-stationarity, and heteroscedasticity. This ongoing project explores the integration of robust statistical preprocessing techniques—including log, Box-Cox, Yeo-Johnson, square root, and differencing—into transformer-based architectures. The objective is to improve model adaptability to distribution shifts and enhance forecasting accuracy under data irregularities.
+### [Normalizations](https://github.com/scalation/scalation_py/tree/dev_sr/Normalizations)
+Transformer models for time series forecasting often rely on standard normalization methods, which can struggle with tackling real-world data challenges such as distributional shifts, skewness, non-stationarity, and heteroscedasticity. This project explores the integration of robust statistical preprocessing techniques—including log, Box-Cox, Yeo-Johnson, square root, and differencing—into transformer-based architectures. The objective is to tackle real-world data challenges and improve time series forecasting. 
 
 ## Citation
 
