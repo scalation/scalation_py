@@ -55,7 +55,7 @@ For questions or collaboration inquiries, feel free to reach out:
 Ph.D. Candidate  
 Graduate Research Assistant  
 University of Georgia  
-📧 subas.rana187@gmail.com
+📧 subas.rana@outlook.com
 📧 subas.rana@uga.edu
 
 ---
